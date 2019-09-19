@@ -30,9 +30,9 @@ namespace NotesSimulator
             //mainWindowViewModel.StartApplication();
         }
 
-        public ContentControl ContentControl
-        {
-            get { return _contentControl; }
-        }
+        //public ContentControl ContentControl
+        //{
+        //    get { return _contentControl; }
+        //}
     }
 }
