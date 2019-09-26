@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using NotesSimulator.ViewModel;
 
-namespace NotesSimulator.Views
+namespace NotesSimulator.Views.Notes
 {
     /// <summary>
     /// Interaction logic for AllNotesView.xaml
