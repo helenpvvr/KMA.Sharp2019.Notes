@@ -7,6 +7,36 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width ="42*"/>
+            <ColumnDefinition Width ="29*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Background="Black"></StackPanel>
+        <Viewbox Grid.Column="0" Grid.Row="0">
+            <Button Content="←          "  Background="Black" BorderThickness="0" Foreground="White" Command="{Binding ReturnToAllNotesCommand}"></Button>
+        </Viewbox>
+   
+        <!--<Viewbox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Margin="10, 0"  VerticalAlignment="Center">-->
+        <TextBlock Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Margin="10, 0" HorizontalAlignment="Right" VerticalAlignment="Center" Text="{Binding Dates, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Foreground="White" ></TextBlock>
+        <!--</Viewbox>-->
+        <Viewbox Grid.Column="0" Grid.Row="1"  Margin="10, 0" VerticalAlignment="Center">
+            <TextBlock Text="Назва: " ></TextBlock>
+        </Viewbox>
+        <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="10,5" Background="WhiteSmoke" Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Margin="10,0, 10, 5" Background="WhiteSmoke" Text="{Binding NoteField, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Background="Black"></StackPanel>
+        <Viewbox Grid.Column="0" Grid.Row="3" Margin="10, 0"  VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock Text="Team@2019" Foreground="White" ></TextBlock>
+        </Viewbox>
+        <Viewbox Grid.Column="2" Grid.Row="3" Margin="10, 0"  VerticalAlignment="Center" HorizontalAlignment="Right">
+            <TextBlock Text="UserLogin" Foreground="White" ></TextBlock>
+        </Viewbox>
     </Grid>
 </UserControl>

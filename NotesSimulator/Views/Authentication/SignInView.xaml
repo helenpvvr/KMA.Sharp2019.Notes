@@ -11,15 +11,10 @@
             <RowDefinition Height="18*"/>
             <RowDefinition Height="9*"/>
             <RowDefinition Height="9*"/>
-     
-
             <RowDefinition Height="9*"/>
             <RowDefinition Height="9*"/>
-
             <RowDefinition Height="9*"/>
-            
             <RowDefinition Height="18*"/>
-            
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="29*"/>
@@ -27,9 +22,9 @@
             <ColumnDefinition Width ="29*"/>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="1" Grid.Column="1" Content="Login" VerticalAlignment="Bottom"></Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,0,15"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         <Label Grid.Row="3" Grid.Column="1" Content="Password" VerticalAlignment="Bottom"></Label>
-        <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,0,15"></TextBox>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         <Button Grid.Row="5" Grid.Column="1" Content="Sign in" HorizontalAlignment="Right" Margin="75,0,0,0"  VerticalAlignment="Center" Width="75" Command="{Binding SignInCommand}"/>
         <Button Grid.Row="5" Grid.Column="1" Content="Sign up" HorizontalAlignment="Right" Margin="0,0,80,0" VerticalAlignment="Center" Width="75" Command="{Binding SignUpCommand}" />
     </Grid>

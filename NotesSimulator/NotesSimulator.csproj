@@ -65,7 +65,11 @@
     <Compile Include="Tools\Controls\LabelAndTextControl.xaml.cs">
       <DependentUpon>LabelAndTextControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\RelayCommand.cs" />
     <Compile Include="ViewModel\AllNotesViewModel.cs" />
+    <Compile Include="ViewModel\NoteViewModel.cs" />
+    <Compile Include="ViewModel\SignInViewModel.cs" />
+    <Compile Include="ViewModel\SignUpViewModel.cs" />
     <Compile Include="Views\Notes\AllNotesView.xaml.cs">
       <DependentUpon>AllNotesView.xaml</DependentUpon>
     </Compile>

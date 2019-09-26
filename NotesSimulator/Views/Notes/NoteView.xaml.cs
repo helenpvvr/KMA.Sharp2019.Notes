@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using NotesSimulator.ViewModel;
 
 namespace NotesSimulator.Views.Notes
 {
@@ -23,6 +24,7 @@ namespace NotesSimulator.Views.Notes
         public NoteView()
         {
             InitializeComponent();
+            DataContext = new NoteViewModel();
         }
     }
 }
