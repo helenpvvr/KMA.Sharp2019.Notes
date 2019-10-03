@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using NotesSimulator.Managers;
+using System.Threading;
+using KMA.Sharp2019.Notes.MoreThanNotes.Models;
 
 namespace NotesSimulator.ViewModel
 {
@@ -52,13 +55,12 @@ namespace NotesSimulator.ViewModel
 
         public ICommand SignInCommand
         {
-            get { return _signInCommand ?? (_signInCommand = new RelayCommand<object>(SignIn)); }
+            get { return _signInCommand ?? (_signInCommand = new RelayCommand<object>(SignInImplementation)); }
         }
 
         private void SignUp(object obj)
         {
-            // TODO написати нормальний код
-            MessageBox.Show("You clicked Sign Up");
+            NavigationManager.Instance.Navigate(ModesEnum.SingUp);
         }
 
         private void SignIn(object obj)
@@ -73,6 +75,41 @@ namespace NotesSimulator.ViewModel
         internal virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private async void SignInImplementation(object obj)
+        {
+            LoaderManager.Instance.ShowLoader();
+            var result = await Task.Run(() =>
+            {
+                User currentUser;
+                try
+                {
+                    currentUser = StationManager.DataStorage.GetUserByLogin(_login);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}{ex.Message}");
+                    return false;
+                }
+                if (currentUser == null)
+                {
+                    MessageBox.Show(
+                        $"Sign In failed fo user {_login}. Reason:{Environment.NewLine}User does not exist.");
+                    return false;
+                }
+                if (!currentUser.CheckPassword(_password))
+                {
+                    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}Wrong Password.");
+                    return false;
+                }
+                StationManager.CurrentUser = currentUser;
+                MessageBox.Show($"Sign In successfull fo user {_login}.");
+                return true;
+            });
+            LoaderManager.Instance.HideLoader();
+            if (result)
+                NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
         }
     }
 }

@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using KMA.Sharp2019.Notes.MoreThanNotes.Models;
+using NotesSimulator.Managers;
 using NotesSimulator.Tools;
 
 namespace NotesSimulator.ViewModel
@@ -56,7 +59,7 @@ namespace NotesSimulator.ViewModel
 
         public ICommand SignUpCommand
         {
-            get { return _signUpCommand ?? (_signUpCommand = new RelayCommand<object>(SignUp)); }
+            get { return _signUpCommand ?? (_signUpCommand = new RelayCommand<object>(SignUpInplementation)); }
         }
 
         public ICommand SignInCommand
@@ -73,8 +76,7 @@ namespace NotesSimulator.ViewModel
 
         private void SignIn(object obj)
         {
-            // TODO написати нормальний код
-            MessageBox.Show("You clicked Sign Ip");
+            NavigationManager.Instance.Navigate(ModesEnum.SignIn);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -83,5 +85,37 @@ namespace NotesSimulator.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        private async void SignUpInplementation(object obj)
+        {
+            LoaderManager.Instance.ShowLoader();
+            var result = await Task.Run(() =>
+            {
+                User currentUser;
+                try
+                {
+                    currentUser = StationManager.DataStorage.GetUserByLogin(_login);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}{ex.Message}");
+                    return false;
+                }
+                if (currentUser != null)
+                {
+                    MessageBox.Show(
+                        $"Sign Up failed fo user {_login}. Reason:{Environment.NewLine}User with sucn name exists.");
+                    return false;
+                }
+                return true;
+            });
+            LoaderManager.Instance.HideLoader();
+            if (!result)
+                return;
+            StationManager.CurrentUser = new User(Login, Email, Password);
+            MessageBox.Show($"User with name {_login} was created");
+            NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
+        }
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.Models
 {
@@ -9,6 +10,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.Models
         private string _login;
         private string _email;
         private string _password;
+        private List<Note> _notes;
         #endregion
 
         #region Properties
@@ -54,6 +56,12 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.Models
             }
             set { _password = value; }
         }
+
+        public List<Note> Notes
+        {
+            get { return _notes; }
+            set { _notes = value; }
+        }
         #endregion
 
         #region Constructor
@@ -64,6 +72,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.Models
             _login = login;
             _email = email;
             SetPassword(password);
+            _notes = new List<Note>();
         }
 
         public User()

@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace NotesSimulator
 {
@@ -23,11 +10,22 @@ namespace NotesSimulator
         public MainWindow()
         {
             InitializeComponent();
-            //var navigationModel = new NavigationModel(this);
-           // NavigationManager.Instance.Initialize(navigationModel);
-            //MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
-            //DataContext = mainWindowViewModel;
-            //mainWindowViewModel.StartApplication();
+            /*var navigationModel = new NavigationModel(this);
+            NavigationManager.Instance.Initialize(navigationModel);
+            StationManager.Initialize(new DataStorage.DataStorage());
+
+            StationManager.DataStorage.AddUser(new User("111", "111", "111"));
+            User user = StationManager.DataStorage.GetUserByLogin("111");
+            user.Notes = new List<Note>()
+            {
+                new Note("Finish MOOP", "FINISH!!!", new DateTime(2019, 10, 2)),
+                new Note("Go to shop", "...", DateTime.Now)
+            };
+
+            MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
+            DataContext = mainWindowViewModel;
+            mainWindowViewModel.StartApplication();*/
+
         }
 
         //public ContentControl ContentControl

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using NotesSimulator.Managers;
 
 namespace NotesSimulator.ViewModel
 {
@@ -15,11 +16,11 @@ namespace NotesSimulator.ViewModel
         private ObservableCollection<Note> _notes;
 
         public AllNotesViewModel() {
-            _notes = new ObservableCollection<Note>
+            //_notes = new ObservableCollection<Note>(StationManager.CurrentUser.Notes);
+            _notes = new ObservableCollection<Note>()
             {
-                new Note("Note01", "Text01", DateTime.Now),
-                new Note("Note02", "Text02", DateTime.Now),
-                new Note("Note03", "Text03", DateTime.Now)
+                new Note("Note 1", "Text to note 1", DateTime.Now),
+                new Note("Note 2", "Text to note 2 LONG LONG LONG LONG LOOOOOOOOOOOOOOOOOOOONG LONG LONG LONG LONG LOOOOOOOOOOOOOOOOOOOONG", DateTime.Today)
             };
         }
 

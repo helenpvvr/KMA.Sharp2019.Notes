@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Background="Black"></StackPanel>
         <Viewbox Grid.Column="0" Grid.Row="0">
-            <Button Content="←          "  Background="Black" BorderThickness="0" Foreground="White" Command="{Binding ReturnToAllNotesCommand}"></Button>
+            <Button Content="←" Padding="10, 0" Background="Black" BorderThickness="0" Foreground="White" Command="{Binding ReturnToAllNotesCommand}"></Button>
         </Viewbox>
    
         <!--<Viewbox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Margin="10, 0"  VerticalAlignment="Center">-->
