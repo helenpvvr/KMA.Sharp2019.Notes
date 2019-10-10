@@ -1,41 +1,40 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Forms;
 
 namespace NotesSimulator.Tools.Controls
 {
     /// <summary>
-    /// Interaction logic for LabelAndTextControl.xaml
+    /// Interaction logic for PasswordControl.xaml
     /// </summary>
-    public partial class LabelAndTextControl
+    public partial class PasswordControl : UserControl
     {
-        public LabelAndTextControl()
+        public PasswordControl()
         {
             InitializeComponent();
         }
 
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register
+        public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register
         (
-            "Text",
+            "Password",
             typeof(string),
-            typeof(LabelAndTextControl),
+            typeof(PasswordControl),
             new PropertyMetadata(null)
         );
-        public string Text
+        public string Password
         {
-            get { return (string)GetValue(TextProperty); }
-            set { SetValue(CaptionProperty, value); }
+            get { return (string)GetValue(PasswordProperty); }
+            set { SetValue(PasswordProperty, value); }
         }
 
         public static readonly DependencyProperty CaptionProperty = DependencyProperty.Register
         (
             "Caption",
             typeof(string),
-            typeof(LabelAndTextControl),
-            new PropertyMetadata(null)
+            typeof(PasswordControl),
+            new PropertyMetadata(string.Empty)
         );
 
-       
+
         public string Caption
         {
             get { return (string)GetValue(CaptionProperty); }

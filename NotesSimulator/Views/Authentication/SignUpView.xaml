@@ -1,8 +1,9 @@
-﻿<UserControl x:Class="NotesSimulator.Views.Authentication.SingUpView"
+﻿<UserControl x:Class="NotesSimulator.Views.Authentication.SignUpView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:NotesSimulator.Tools.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              x:ClassModifier="internal">
@@ -30,7 +31,8 @@
         <Label Grid.Row="1" Grid.Column="1" VerticalAlignment ="Bottom" Content="Login"></Label>
         <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         <Label Grid.Row="3" Grid.Column="1" VerticalAlignment ="Bottom" Content="Password"></Label>
-        <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <!--<TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>-->
+        <controls:PasswordControl Grid.Row="4" Grid.Column="1" Margin="0,0,0,15" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></controls:PasswordControl>
         <Label Grid.Row="5" Grid.Column="1" VerticalAlignment ="Bottom" Content="Email"></Label>
         <TextBox Grid.Row="6" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         <Button Background="Black" Foreground="White" Grid.Row="7" Grid.Column="1" Width="75" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Sing up" Command="{Binding SignUpCommand}"></Button>

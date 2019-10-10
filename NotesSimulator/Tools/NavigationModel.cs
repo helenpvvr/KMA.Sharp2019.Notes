@@ -16,7 +16,7 @@ namespace NotesSimulator.Tools
     {
         private readonly IContentWindow _contentWindow;
         private SignInView _signInView;
-        private SingUpView _signUpView;
+        private SignUpView _signUpView;
         private AllNotesView _allNotesView;
         private NoteView _noteView;
 
@@ -33,7 +33,7 @@ namespace NotesSimulator.Tools
                     _contentWindow.ContentControl.Content = _signInView ?? (_signInView = new SignInView());
                     break;
                 case ModesEnum.SingUp:
-                    _contentWindow.ContentControl.Content = _signUpView ?? (_signUpView = new SingUpView());
+                    _contentWindow.ContentControl.Content = _signUpView ?? (_signUpView = new SignUpView());
                     break;
                 case ModesEnum.AllNotes:
                     _contentWindow.ContentControl.Content = _allNotesView ?? (_allNotesView = new AllNotesView());

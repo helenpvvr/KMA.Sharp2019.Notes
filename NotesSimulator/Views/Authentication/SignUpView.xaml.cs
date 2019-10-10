@@ -6,9 +6,9 @@ namespace NotesSimulator.Views.Authentication
     /// <summary>
     /// Interaction logic for SingUpView.xaml
     /// </summary>
-    internal partial class SingUpView : UserControl
+    internal partial class SignUpView : UserControl
     {
-        internal SingUpView()
+        internal SignUpView()
         {
             InitializeComponent();
             DataContext = new SignUpViewModel();

@@ -31,8 +31,6 @@
 
         <DataGrid ItemsSource="{Binding Notes, Mode=OneWay}" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Padding="10" IsReadOnly="True" Background="White">
             <DataGrid.Columns>
-                <!--<DataGridTextColumn Header="Notes" Binding="{Binding Name}" Width="80*"></DataGridTextColumn>-->
-
                 <DataGridTemplateColumn Header="Notes" Width="80*" CanUserResize="False">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -75,7 +73,7 @@
             <TextBlock Text="Team@2019" Foreground="White" ></TextBlock>
         </Viewbox>
         <Viewbox Grid.Column="2" Grid.Row="2" Margin="10, 0"  VerticalAlignment="Center" HorizontalAlignment="Right">
-            <TextBlock Text="UserLogin" Foreground="White" ></TextBlock>
+            <TextBlock Text="{Binding UserLogin, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Foreground="White" ></TextBlock>
         </Viewbox>
     </Grid>
 </UserControl>
