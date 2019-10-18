@@ -60,10 +60,10 @@ namespace NotesSimulator.ViewModel
 
         public ICommand SignInCommand
         {
-            get { return _signInCommand ?? (_signInCommand = new RelayCommand<object>(SignIn)); }
+            get { return _signInCommand ?? (_signInCommand = new RelayCommand<object>(SignInImplementation)); }
         }
 
-        private void SignIn(object obj)
+        private void SignInImplementation(object obj)
         {
             NavigationManager.Instance.Navigate(ModesEnum.SignIn);
         }

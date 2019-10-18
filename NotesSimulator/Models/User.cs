@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.Models
 {
@@ -96,6 +97,21 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.Models
         public override string ToString()
         {
             return Login;
+        }
+
+        public Note GetNoteByGuid(Guid guid)
+        {
+            return _notes.FirstOrDefault(n => n.Guid == guid);
+        }
+
+        public void AddNote(Note note)
+        {
+            _notes.Add(note);
+        }
+
+        public void RemoveNote(Note note)
+        {
+            _notes.RemoveAll(n => n.Guid == note.Guid);
         }
     }
 }

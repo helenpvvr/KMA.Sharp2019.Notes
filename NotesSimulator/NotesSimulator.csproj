@@ -158,5 +158,8 @@
   <ItemGroup>
     <Resource Include="Images\delete_img.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\save_img.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

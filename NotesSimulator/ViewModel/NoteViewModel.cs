@@ -1,8 +1,13 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using KMA.Sharp2019.Notes.MoreThanNotes.Models;
+using NotesSimulator.Managers;
 using NotesSimulator.Tools;
 
 namespace NotesSimulator.ViewModel
@@ -13,9 +18,9 @@ namespace NotesSimulator.ViewModel
         private DateTime? _editedDateTime;
         private string _title;
         private string _noteField;
-        private string _userLogin;
 
         private RelayCommand<object> _returnToAllNotesCommand;
+        private RelayCommand<object> _saveNoteCommand;
 
         public DateTime? CreatedDateTime
         {
@@ -68,29 +73,18 @@ namespace NotesSimulator.ViewModel
 
         public string UserLogin
         {
-            get => _userLogin;
-            set
-            {
-                _userLogin = value;
-                OnPropertyChanged();
-            }
+            get => StationManager.CurrentUser.Login;
         }
 
         public NoteViewModel()
         {
-            // TODO init fileds
-            EditedDateTime = DateTime.Now;
-            CreatedDateTime = DateTime.Today;
-            Title = "Title Test";
-            NoteField = "The Cisco Borderless Network provides the framework to " +
-                        "unify wired and wireless access, including policy, access control, " +
-                        "and performance management across many different device types. Using " +
-                        "this architecture, the borderless network is built on a hierarchical infrastructure of " +
-                        "hardware that is scalable and resilient, as shown in the figure. By combining this hardware " +
-                        "infrastructure with policy-based software solutions, the Cisco Borderless Network provides " +
-                        "two primary sets of services: network services, and user and endpoint services that are all " +
-                        "managed by an integrated management solution. It enables different network elements to work " +
-                        "together, and allows users to access resources from any place, at any time, while providing optimization, scalability, and security. The Cisco Borderless Network provides the framework to unify wired and wireless access, including policy, access control, and performance management across many different device types. Using this architecture, the borderless network is built on a hierarchical infrastructure of hardware that is scalable and resilient, as shown in the figure. By combining this hardware infrastructure with policy-based software solutions, the Cisco Borderless Network provides two primary sets of services: network services, and user and endpoint services that are all managed by an integrated management solution. It enables different network elements to work together, and allows users to access resources from any place, at any time, while providing optimization, scalability, and security. The Cisco Borderless Network provides the framework to unify wired and wireless access, including policy, access control, and performance management across many different device types. Using this architecture, the borderless network is built on a hierarchical infrastructure of hardware that is scalable and resilient, as shown in the figure. By combining this hardware infrastructure with policy-based software solutions, the Cisco Borderless Network provides two primary sets of services: network services, and user and endpoint services that are all managed by an integrated management solution. It enables different network elements to work together, and allows users to access resources from any place, at any time, while providing optimization, scalability, and security. The Cisco Borderless Network provides the framework to unify wired and wireless access, including policy, access control, and performance management across many different device types. Using this architecture, the borderless network is built on a hierarchical infrastructure of hardware that is scalable and resilient, as shown in the figure. By combining this hardware infrastructure with policy-based software solutions, the Cisco Borderless Network provides two primary sets of services: network services, and user and endpoint services that are all managed by an integrated management solution. It enables different network elements to work together, and allows users to access resources from any place, at any time, while providing optimization, scalability, and security.";
+            if (StationManager.CurrentNote == null)
+                StationManager.CurrentNote = new Note();
+
+            Title = StationManager.CurrentNote.Name;
+            NoteField = StationManager.CurrentNote.Text;
+            CreatedDateTime = StationManager.CurrentNote.CreatedDateTime;
+            EditedDateTime = StationManager.CurrentNote.EditedDateTime;
         }
 
         public ICommand ReturnToAllNotesCommand
@@ -101,10 +95,34 @@ namespace NotesSimulator.ViewModel
             }
         }
 
+        public ICommand SaveNoteCommand
+        {
+            get
+            {
+                return _saveNoteCommand ?? (_saveNoteCommand = new RelayCommand<object>(SaveNote));
+            }
+        }
+
         private void OpenAllNotes(object obj)
         {
-            // TODO save changes and change view
-            MessageBox.Show("You click return button");
+            NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
+        }
+
+        private async void SaveNote(object obj)
+        {
+            LoaderManager.Instance.ShowLoader();
+            // TODO if there may be any mistake
+            await Task.Run(() =>
+            {
+                Thread.Sleep(100);
+                StationManager.CurrentNote.Name = Title;
+                StationManager.CurrentNote.Text = NoteField;
+                StationManager.CurrentNote.EditedDateTime = DateTime.Now;
+                if (StationManager.CurrentUser.Notes.Where(n => n.Guid == StationManager.CurrentNote.Guid).ToList().Count == 0)
+                    StationManager.CurrentUser.Notes.Add(StationManager.CurrentNote);
+            });
+            LoaderManager.Instance.HideLoader();
+            EditedDateTime = StationManager.CurrentNote.EditedDateTime; // not show. why?
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -26,5 +26,6 @@ namespace NotesSimulator.Views.Notes
             InitializeComponent();
             DataContext = new NoteViewModel();
         }
+        
     }
 }

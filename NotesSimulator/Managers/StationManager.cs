@@ -12,6 +12,7 @@ namespace NotesSimulator.Managers
         private static IDataStorage _dataStorage;
 
         internal static User CurrentUser { get; set; }
+        internal static Note CurrentNote { get; set; }
 
         internal static IDataStorage DataStorage
         {

@@ -8,7 +8,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.Models
         private Guid _guid;
         private string _name;
         private string _text;
-        private DateTime? _createdDateTime;
+        private readonly DateTime? _createdDateTime;
         private DateTime? _editedDateTime;
         #endregion
 
@@ -16,17 +16,23 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.Models
         public Guid Guid { get => _guid; set => _guid = value; }
         public string Name { get => _name; set => _name = value; }
         public string Text { get => _text; set => _text = value; }
-        public DateTime? CreatedDateTime { get => _createdDateTime; set => _createdDateTime = value; }
+        public DateTime? CreatedDateTime { get => _createdDateTime; }
         public DateTime? EditedDateTime { get => _editedDateTime; set => _editedDateTime = value; }
         #endregion
 
         #region Constructor
         public Note(string name, string text, DateTime? createdDateTime)
         {
-            Name = name;
-            Text = text;
-            CreatedDateTime = createdDateTime;
-            EditedDateTime = createdDateTime;
+            _guid = Guid.NewGuid();
+            _name = name;
+            _text = text;
+            _createdDateTime = createdDateTime;
+            _editedDateTime = createdDateTime;
+        }
+
+        public Note() : this("", "", DateTime.Now)
+        {
+            
         }
         #endregion
     }

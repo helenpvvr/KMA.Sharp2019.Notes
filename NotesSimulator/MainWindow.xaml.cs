@@ -1,16 +1,23 @@
-﻿using System.Windows;
+﻿using KMA.Sharp2019.Notes.MoreThanNotes.Models;
+using NotesSimulator.Managers;
+using NotesSimulator.Tools;
+using NotesSimulator.ViewModel;
+using System;
+using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace NotesSimulator
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : IContentWindow
     {
         public MainWindow()
         {
             InitializeComponent();
-            /*var navigationModel = new NavigationModel(this);
+            var navigationModel = new NavigationModel(this);
             NavigationManager.Instance.Initialize(navigationModel);
             StationManager.Initialize(new DataStorage.DataStorage());
 
@@ -24,13 +31,13 @@ namespace NotesSimulator
 
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
             DataContext = mainWindowViewModel;
-            mainWindowViewModel.StartApplication();*/
+            mainWindowViewModel.StartApplication();
 
         }
 
-        //public ContentControl ContentControl
-        //{
-        //    get { return _contentControl; }
-        //}
+        public ContentControl ContentControl
+        {
+            get { return _contentControl; }
+        }
     }
 }

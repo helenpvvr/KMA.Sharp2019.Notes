@@ -30,16 +30,16 @@ namespace NotesSimulator.Tools
             switch (mode)
             {
                 case ModesEnum.SignIn:
-                    _contentWindow.ContentControl.Content = _signInView ?? (_signInView = new SignInView());
+                    _contentWindow.ContentControl.Content = _signInView = new SignInView();//_signInView ?? (_signInView = new SignInView());
                     break;
                 case ModesEnum.SingUp:
-                    _contentWindow.ContentControl.Content = _signUpView ?? (_signUpView = new SignUpView());
+                    _contentWindow.ContentControl.Content = new SignUpView(); // _signUpView ?? (_signUpView = new SignUpView());
                     break;
                 case ModesEnum.AllNotes:
-                    _contentWindow.ContentControl.Content = _allNotesView ?? (_allNotesView = new AllNotesView());
+                    _contentWindow.ContentControl.Content = new AllNotesView(); // _allNotesView ?? (_allNotesView = new AllNotesView());
                     break;
                 case ModesEnum.NoteDetail:
-                    _contentWindow.ContentControl.Content = _noteView ?? ((_noteView) = new NoteView());
+                    _contentWindow.ContentControl.Content = new NoteView(); //_noteView ?? ((_noteView) = new NoteView());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(mode), mode, null);

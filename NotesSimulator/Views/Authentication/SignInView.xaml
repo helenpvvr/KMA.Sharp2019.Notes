@@ -26,8 +26,7 @@
         <Label Grid.Row="1" Grid.Column="1" Content="Login" VerticalAlignment="Bottom"></Label>
         <TextBox VerticalAlignment="Center" Padding="5" Grid.Row="2" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         <Label Grid.Row="3" Grid.Column="1" Content="Password" VerticalAlignment="Bottom"></Label>
-        <!--<TextBox VerticalAlignment="Center" Padding="5" Grid.Row="4" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>-->
-        <controls:PasswordControl VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" Margin="0,0,0,15" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></controls:PasswordControl>
+        <controls:PasswordControl Grid.Row="4" Grid.Column="1" Margin="0,0,0,15" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></controls:PasswordControl>
         <Button Background="Black" Foreground="White" Grid.Row="5" Grid.Column="1" Content="Sign in" HorizontalAlignment="Right" Margin="75,0,0,0"  VerticalAlignment="Center" Width="75" Command="{Binding SignInCommand}"/>
         <Button Background="Black" Foreground="White" Grid.Row="5" Grid.Column="1" Content="Sign up" HorizontalAlignment="Right" Margin="0,0,80,0" VerticalAlignment="Center" Width="75" Command="{Binding SignUpCommand}" />
         <StackPanel Grid.Row="6" Grid.ColumnSpan="3" Background="Black"></StackPanel>
