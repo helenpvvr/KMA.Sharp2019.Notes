@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace NotesSimulator.Tools
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools
 {
     public static class PasswordBoxAssistant
     {

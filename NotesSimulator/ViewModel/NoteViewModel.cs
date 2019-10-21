@@ -4,13 +4,12 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 using KMA.Sharp2019.Notes.MoreThanNotes.Models;
-using NotesSimulator.Managers;
-using NotesSimulator.Tools;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
-namespace NotesSimulator.ViewModel
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
     class NoteViewModel : INotifyPropertyChanged
     {
@@ -62,14 +61,14 @@ namespace NotesSimulator.ViewModel
             }
         }
 
-        public string Dates
+        /*public string Dates
         {
             get
             {
                 return "Created: " + CreatedDateTime.ToString() + 
                          ((EditedDateTime != CreatedDateTime) ? " / Last edited: " + EditedDateTime.ToString() : "");
             }
-        }
+        }*/
 
         public string UserLogin
         {
@@ -84,7 +83,8 @@ namespace NotesSimulator.ViewModel
             Title = StationManager.CurrentNote.Name;
             NoteField = StationManager.CurrentNote.Text;
             CreatedDateTime = StationManager.CurrentNote.CreatedDateTime;
-            EditedDateTime = StationManager.CurrentNote.EditedDateTime;
+            EditedDateTime = null; // don't show edited time when we created new note
+            //EditedDateTime = StationManager.CurrentNote.EditedDateTime;
         }
 
         public ICommand ReturnToAllNotesCommand
@@ -122,7 +122,7 @@ namespace NotesSimulator.ViewModel
                     StationManager.CurrentUser.Notes.Add(StationManager.CurrentNote);
             });
             LoaderManager.Instance.HideLoader();
-            EditedDateTime = StationManager.CurrentNote.EditedDateTime; // not show. why?
+            EditedDateTime = StationManager.CurrentNote.EditedDateTime;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

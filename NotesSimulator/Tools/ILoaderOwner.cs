@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace NotesSimulator.Tools
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools
 {
     internal interface ILoaderOwner
     {

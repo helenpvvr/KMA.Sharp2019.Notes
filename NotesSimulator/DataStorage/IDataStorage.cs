@@ -1,7 +1,7 @@
 ﻿using KMA.Sharp2019.Notes.MoreThanNotes.Models;
 using System.Collections.Generic;
 
-namespace NotesSimulator.DataStorage
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.DataStorage
 {
     internal interface IDataStorage
     {

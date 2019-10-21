@@ -1,7 +1,7 @@
-﻿using NotesSimulator.ViewModel;
+﻿using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel;
 using System.Windows.Controls;
 
-namespace NotesSimulator.Views.Authentication
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Views.Authentication
 {
     /// <summary>
     /// Interaction logic for SingUpView.xaml

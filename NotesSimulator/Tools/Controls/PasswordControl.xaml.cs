@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace NotesSimulator.Tools.Controls
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools.Controls
 {
     /// <summary>
     /// Interaction logic for PasswordControl.xaml

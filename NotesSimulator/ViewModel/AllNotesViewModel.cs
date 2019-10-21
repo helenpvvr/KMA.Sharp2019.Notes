@@ -5,11 +5,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using NotesSimulator.Managers;
-using NotesSimulator.Tools;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 using System.Windows.Input;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
-namespace NotesSimulator.ViewModel
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
     class AllNotesViewModel : INotifyPropertyChanged
     {

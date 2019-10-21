@@ -1,9 +1,9 @@
 ﻿using KMA.Sharp2019.Notes.MoreThanNotes.Models;
-using NotesSimulator.DataStorage;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.DataStorage;
 using System;
 using System.Windows;
 
-namespace NotesSimulator.Managers
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers
 {
     internal static class StationManager
     {

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace NotesSimulator.Tools
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools
 {
     interface IContentWindow
     {

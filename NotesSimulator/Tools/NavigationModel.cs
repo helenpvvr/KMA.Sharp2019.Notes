@@ -1,8 +1,8 @@
-﻿using NotesSimulator.Views.Authentication;
+﻿using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Views.Authentication;
 using System;
-using NotesSimulator.Views.Notes;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Views.Notes;
 
-namespace NotesSimulator.Tools
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools
 {
     internal enum ModesEnum
     {

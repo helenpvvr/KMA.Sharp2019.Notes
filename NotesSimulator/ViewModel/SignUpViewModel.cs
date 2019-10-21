@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using KMA.Sharp2019.Notes.MoreThanNotes.Models;
-using NotesSimulator.Managers;
-using NotesSimulator.Tools;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
-namespace NotesSimulator.ViewModel
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
     class SignUpViewModel : INotifyPropertyChanged
     {

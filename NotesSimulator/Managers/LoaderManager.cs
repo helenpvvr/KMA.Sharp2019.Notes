@@ -1,7 +1,7 @@
-﻿using NotesSimulator.Tools;
+﻿using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 using System.Windows;
 
-namespace NotesSimulator.Managers
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers
 {
     internal class LoaderManager
     {

@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using NotesSimulator.Managers;
-using NotesSimulator.Tools;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
-namespace NotesSimulator.ViewModel
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
     public class MainWindowViewModel : ILoaderOwner
     {

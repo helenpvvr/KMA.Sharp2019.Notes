@@ -1,14 +1,14 @@
-﻿using NotesSimulator.Tools;
+﻿using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using NotesSimulator.Managers;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 using KMA.Sharp2019.Notes.MoreThanNotes.Models;
 
-namespace NotesSimulator.ViewModel
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
     class SignInViewModel : INotifyPropertyChanged
     {

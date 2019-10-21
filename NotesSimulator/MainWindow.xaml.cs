@@ -1,13 +1,13 @@
 ﻿using KMA.Sharp2019.Notes.MoreThanNotes.Models;
-using NotesSimulator.Managers;
-using NotesSimulator.Tools;
-using NotesSimulator.ViewModel;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace NotesSimulator
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

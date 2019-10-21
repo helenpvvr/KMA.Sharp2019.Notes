@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace NotesSimulator.Tools
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools
 {
     public class RelayCommand<T> : ICommand
     {

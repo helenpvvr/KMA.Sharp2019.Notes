@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
-using NotesSimulator.ViewModel;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel;
 
-namespace NotesSimulator.Views.Notes
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Views.Notes
 {
     /// <summary>
     /// Interaction logic for AllNotesView.xaml

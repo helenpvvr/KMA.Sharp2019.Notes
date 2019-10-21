@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NotesSimulator.DataStorage
+namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.DataStorage
 {
     internal class DataStorage : IDataStorage
     {
