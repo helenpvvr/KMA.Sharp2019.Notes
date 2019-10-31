@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesSimulator", "NotesSimu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBModels", "DBModels\DBModels.csproj", "{ADA1705D-F206-4131-B124-505A9ADC6A21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesWcfService", "NotesWcfService\NotesWcfService.csproj", "{C723F735-086A-4DC9-BFB2-A67E29B42DA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{ADA1705D-F206-4131-B124-505A9ADC6A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADA1705D-F206-4131-B124-505A9ADC6A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADA1705D-F206-4131-B124-505A9ADC6A21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C723F735-086A-4DC9-BFB2-A67E29B42DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C723F735-086A-4DC9-BFB2-A67E29B42DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C723F735-086A-4DC9-BFB2-A67E29B42DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C723F735-086A-4DC9-BFB2-A67E29B42DA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
