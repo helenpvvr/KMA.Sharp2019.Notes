@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreThanNotes", "MoreThanNotes\MoreThanNotes.csproj", "{940F065B-69A5-471B-9353-DFC1C6F46B14}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesSimulator", "NotesSimulator\NotesSimulator.csproj", "{3B986E6C-12C4-49E8-AB73-A08C7C7DCF41}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C723F735-086A-4DC9-BFB2-A67E29B42DA2} = {C723F735-086A-4DC9-BFB2-A67E29B42DA2}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBModels", "DBModels\DBModels.csproj", "{ADA1705D-F206-4131-B124-505A9ADC6A21}"
 EndProject

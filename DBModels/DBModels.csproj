@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{ADA1705D-F206-4131-B124-505A9ADC6A21}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DBModels</RootNamespace>
-    <AssemblyName>DBModels</AssemblyName>
+    <RootNamespace>KMA.Sharp2019.Notes.MoreThanNotes.DBModels</RootNamespace>
+    <AssemblyName>KMA.Sharp2019.Notes.MoreThanNotes.DBModels</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

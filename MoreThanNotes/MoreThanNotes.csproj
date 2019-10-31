@@ -7,8 +7,8 @@
     <ProjectGuid>{940F065B-69A5-471B-9353-DFC1C6F46B14}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KMA.Sharp2019.Notes.MoreThanNotes</RootNamespace>
-    <AssemblyName>KMA.Sharp2019.Notes.MoreThanNotes</AssemblyName>
+    <RootNamespace>KMA.Sharp2019.Notes.MoreThanNotes.MoreThanNotes</RootNamespace>
+    <AssemblyName>KMA.Sharp2019.Notes.MoreThanNotes.MoreThanNotes</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

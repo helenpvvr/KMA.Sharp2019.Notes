@@ -11,8 +11,9 @@ namespace NotesWcfService
     // ПРИМЕЧАНИЕ. Чтобы запустить клиент проверки WCF для тестирования службы, выберите элементы NotesService.svc или NotesService.svc.cs в обозревателе решений и начните отладку.
     public class NotesService : INotesService
     {
-        public void DoWork()
+        public string DoWork()
         {
+            return "I work!";
         }
     }
 }

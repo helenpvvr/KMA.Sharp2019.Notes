@@ -12,6 +12,6 @@ namespace NotesWcfService
     public interface INotesService
     {
         [OperationContract]
-        void DoWork();
+        string DoWork();
     }
 }

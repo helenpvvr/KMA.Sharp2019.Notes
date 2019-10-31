@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Input;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 using KMA.Sharp2019.Notes.MoreThanNotes.Models;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceReference;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
@@ -56,6 +57,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 
         private void SignUpImplementation(object obj)
         {
+            NotesWcfServiceReference.NotesServiceClient client = new NotesServiceClient();
+            MessageBox.Show(client.DoWork());
             NavigationManager.Instance.Navigate(ModesEnum.SingUp);
         }
 
