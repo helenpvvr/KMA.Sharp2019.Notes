@@ -1,0 +1,6 @@
+C:\Projects\APZRP\MoreThanNotes\Tools\obj\Debug\Tools.csproj.CoreCompileInputs.cache
+C:\Projects\APZRP\MoreThanNotes\Tools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll.config
+C:\Projects\APZRP\MoreThanNotes\Tools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
+C:\Projects\APZRP\MoreThanNotes\Tools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb
+C:\Projects\APZRP\MoreThanNotes\Tools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
+C:\Projects\APZRP\MoreThanNotes\Tools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb

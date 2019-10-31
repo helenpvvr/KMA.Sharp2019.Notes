@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KMA.Sharp2019.Notes.MoreThanNotes.Models
+namespace KMA.Sharp2019.Notes.MoreThanNotes.MoreThanNotes.Models
 {
     class User
     {

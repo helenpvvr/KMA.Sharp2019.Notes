@@ -1,21 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
 {
+    [Serializable]
+    [DataContract(IsReference = true)]
     public class Note
     {
         #region Fields
+        [DataMember]
         private Guid _guid;
+        [DataMember]
         private string _title;
+        [DataMember]
         private string _noteText;
-        private readonly DateTime? _createdDateTime;
-        private DateTime? _editedDateTime;
+        [DataMember]
+        private DateTime _createdDateTime;
+        [DataMember]
+        private DateTime _editedDateTime;
+        [DataMember]
         private Guid _userGuid;
+        [DataMember]
         private User _user;
         #endregion
 
@@ -35,11 +41,12 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
             get { return _noteText; }
             set { _noteText = value; }
         }
-        public DateTime? CreatedDateTime
+        public DateTime CreatedDateTime
         {
             get { return _createdDateTime; }
+            set { _createdDateTime = value; }
         }
-        public DateTime? EditedDateTime
+        public DateTime EditedDateTime
         {
             get { return _editedDateTime;}
             set { _editedDateTime = value; }
@@ -57,7 +64,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
         #endregion
 
         #region Constructor
-        public Note(string title, string noteText, DateTime? createdDateTime)
+        public Note(string title, string noteText, DateTime createdDateTime)
         {
             _guid = Guid.NewGuid();
             _title = title;
@@ -98,5 +105,10 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
             }
         }
         #endregion
+
+        public void DeleteDatabaseValues()
+        {
+            _user = null;
+        }
     }
 }

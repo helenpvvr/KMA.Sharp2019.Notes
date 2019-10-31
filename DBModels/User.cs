@@ -2,16 +2,24 @@
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
+using System.Runtime.Serialization;
+using KMA.Sharp2019.Notes.MoreThanNotes.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
 {
+    [DataContract(IsReference = true)]
     public class User
     {
         #region Fields
+        [DataMember]
         private Guid _guid;
+        [DataMember]
         private string _login;
+        [DataMember]
         private string _email;
+        [DataMember]
         private string _password;
+        [DataMember]
         private List<Note> _notes;
         #endregion
 
@@ -64,14 +72,20 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
 
         private void SetPassword(string password)
         {
-            //TODO Add encription
-            _password = password;
+            _password = Encrypting.GetMd5HashForString(password);
         }
 
         internal bool CheckPassword(string password)
         {
-            //TODO Compare encrypted passwords
-            return _password == password;
+            try
+            {
+                string res2 = Encrypting.GetMd5HashForString(password);
+                return _password == res2;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public override string ToString()
@@ -107,6 +121,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
                 Property(u => u.Login).HasColumnName("Login").IsRequired();
                 Property(u => u.Email).HasColumnName("Email").IsRequired();
                 Property(u => u.Password).HasColumnName("Password").IsRequired();
+
+                HasMany(u => u.Notes).WithRequired(n => n.User).HasForeignKey(n => n.UserGuid).WillCascadeOnDelete(true);
             }
         }
 
