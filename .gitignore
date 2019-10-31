@@ -1,0 +1,11 @@
+
+.vs/*
+MoreThanNotes/bin/*
+MoreThanNotes/obj/*
+NotesSimulator/bin/*
+NotesSimulator/obj/*
+DBModels/bin/*
+DBModels/obj/*
+NotesWcfService/bin/*
+NotesWcfService/obj/*
+MoreThanNotes.sln.DotSettings.user
