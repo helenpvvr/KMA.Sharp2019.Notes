@@ -5,8 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
-using KMA.Sharp2019.Notes.MoreThanNotes.Models;
+using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceReference;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
@@ -70,7 +71,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
                 User currentUser;
                 try
                 {
-                    currentUser = StationManager.DataStorage.GetUserByLogin(_login);
+                    currentUser = EntityWrapper.UserByLogin(_login);
+                    // TODO delete reference to DBAdapter and use DBManager
                 }
                 catch (Exception ex)
                 {
@@ -89,7 +91,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
                     return false;
                 }
                 StationManager.CurrentUser = currentUser;
-                MessageBox.Show($"Sign In successfull fo user {_login}.");
+                MessageBox.Show($"Sign In successful fo user {_login}.");
                 return true;
             });
             LoaderManager.Instance.HideLoader();

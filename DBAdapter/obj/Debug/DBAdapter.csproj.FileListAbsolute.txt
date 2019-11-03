@@ -16,3 +16,5 @@ C:\Projects\APZRP\MoreThanNotes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThan
 C:\Projects\APZRP\MoreThanNotes\DBAdapter\obj\Debug\DBAdapter.csproj.CopyComplete
 C:\Projects\APZRP\MoreThanNotes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.exe
 C:\Projects\APZRP\MoreThanNotes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.pdb
+C:\Projects\APZRP\MoreThanNotes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.Migrations.InitialMigration.resources
+C:\Projects\APZRP\MoreThanNotes\DBAdapter\obj\Debug\DBAdapter.csproj.GenerateResource.cache

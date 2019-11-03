@@ -4,7 +4,8 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using KMA.Sharp2019.Notes.MoreThanNotes.Models;
+using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter;
+using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
@@ -55,7 +56,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 
         public ICommand SignUpCommand
         {
-            get { return _signUpCommand ?? (_signUpCommand = new RelayCommand<object>(SignUpInplementation)); }
+            get { return _signUpCommand ?? (_signUpCommand = new RelayCommand<object>(SignUpImplementation)); }
         }
 
         public ICommand SignInCommand
@@ -75,7 +76,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private async void SignUpInplementation(object obj)
+        private async void SignUpImplementation(object obj)
         {
             LoaderManager.Instance.ShowLoader();
             var result = await Task.Run(() =>
@@ -83,7 +84,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
                 User currentUser;
                 try
                 {
-                    currentUser = StationManager.DataStorage.GetUserByLogin(_login);
+                    currentUser = EntityWrapper.UserByLogin(_login);
                 }
                 catch (Exception ex)
                 {
@@ -102,6 +103,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             if (!result)
                 return;
             StationManager.CurrentUser = new User(Login, Email, Password);
+            EntityWrapper.AddUser(StationManager.CurrentUser);
+            // TODO remove reference to BDAdapter project
             MessageBox.Show($"User with name {_login} was created");
             NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
         }

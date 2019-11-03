@@ -75,7 +75,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
             _password = Encrypting.GetMd5HashForString(password);
         }
 
-        internal bool CheckPassword(string password)
+        public bool CheckPassword(string password)
         {
             try
             {
@@ -96,16 +96,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
         public Note GetNoteByGuid(Guid guid)
         {
             return _notes.FirstOrDefault(n => n.Guid == guid);
-        }
-
-        public void AddNote(Note note)
-        {
-            _notes.Add(note);
-        }
-
-        public void RemoveNote(Note note)
-        {
-            _notes.RemoveAll(n => n.Guid == note.Guid);
         }
 
         #region EntityConfiguration

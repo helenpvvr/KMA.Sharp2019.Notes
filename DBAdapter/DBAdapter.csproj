@@ -50,6 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityWrapper.cs" />
+    <Compile Include="Migrations\201910311415166_InitialMigration.cs" />
+    <Compile Include="Migrations\201910311415166_InitialMigration.Designer.cs">
+      <DependentUpon>201910311415166_InitialMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MoreThanNotesDBContext.cs" />
     <Compile Include="Program.cs" />
@@ -64,6 +69,11 @@
       <Project>{ADA1705D-F206-4131-B124-505A9ADC6A21}</Project>
       <Name>DBModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910311415166_InitialMigration.resx">
+      <DependentUpon>201910311415166_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

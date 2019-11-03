@@ -4,8 +4,10 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
-using KMA.Sharp2019.Notes.MoreThanNotes.Models;
+using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter;
+using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
@@ -61,15 +63,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             }
         }
 
-        /*public string Dates
-        {
-            get
-            {
-                return "Created: " + CreatedDateTime.ToString() + 
-                         ((EditedDateTime != CreatedDateTime) ? " / Last edited: " + EditedDateTime.ToString() : "");
-            }
-        }*/
-
         public string UserLogin
         {
             get => StationManager.CurrentUser.Login;
@@ -78,13 +71,19 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         public NoteViewModel()
         {
             if (StationManager.CurrentNote == null)
-                StationManager.CurrentNote = new Note();
+            {
+                StationManager.CurrentNote = new Note("", "", StationManager.CurrentUser);
+                EntityWrapper.AddNote(StationManager.CurrentNote);
+                EditedDateTime = null;
+            }
+            else
+            {
+                EditedDateTime = StationManager.CurrentNote.EditedDateTime;
+            }
 
-            Title = StationManager.CurrentNote.Name;
-            NoteField = StationManager.CurrentNote.Text;
+            Title = StationManager.CurrentNote.Title;
+            NoteField = StationManager.CurrentNote.NoteText;
             CreatedDateTime = StationManager.CurrentNote.CreatedDateTime;
-            EditedDateTime = null; // don't show edited time when we created new note
-            //EditedDateTime = StationManager.CurrentNote.EditedDateTime;
         }
 
         public ICommand ReturnToAllNotesCommand
@@ -111,18 +110,27 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         private async void SaveNote(object obj)
         {
             LoaderManager.Instance.ShowLoader();
-            // TODO if there may be any mistake
-            await Task.Run(() =>
+            var result = await Task.Run(() =>
             {
-                Thread.Sleep(100);
-                StationManager.CurrentNote.Name = Title;
-                StationManager.CurrentNote.Text = NoteField;
-                StationManager.CurrentNote.EditedDateTime = DateTime.Now;
-                if (StationManager.CurrentUser.Notes.Where(n => n.Guid == StationManager.CurrentNote.Guid).ToList().Count == 0)
-                    StationManager.CurrentUser.Notes.Add(StationManager.CurrentNote);
+                try
+                {
+                    //Thread.Sleep(100);
+                    StationManager.CurrentNote.Title = Title;
+                    StationManager.CurrentNote.NoteText = NoteField;
+                    StationManager.CurrentNote.EditedDateTime = DateTime.Now;
+
+                    EntityWrapper.SaveNote(StationManager.CurrentNote);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Saving note was failed. Reason:{Environment.NewLine}{ex.Message}");
+                    return false;
+                }
             });
             LoaderManager.Instance.HideLoader();
-            EditedDateTime = StationManager.CurrentNote.EditedDateTime;
+            if(result)
+                EditedDateTime = StationManager.CurrentNote.EditedDateTime;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

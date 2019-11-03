@@ -1,11 +1,8 @@
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.MoreThanNotesDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MoreThanNotesDBContext>
     {
         public Configuration()
         {

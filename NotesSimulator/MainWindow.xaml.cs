@@ -1,4 +1,4 @@
-﻿using KMA.Sharp2019.Notes.MoreThanNotes.Models;
+﻿using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel;
@@ -19,15 +19,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator
             InitializeComponent();
             var navigationModel = new NavigationModel(this);
             NavigationManager.Instance.Initialize(navigationModel);
-            StationManager.Initialize(new DataStorage.DataStorage());
-
-            StationManager.DataStorage.AddUser(new User("111", "111", "111"));
-            User user = StationManager.DataStorage.GetUserByLogin("111");
-            user.Notes = new List<Note>()
-            {
-                new Note("Finish MOOP", "FINISH!!!", new DateTime(2019, 10, 2)),
-                new Note("Go to shop", "...", DateTime.Now)
-            };
+            
+            // TODO init
 
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
             DataContext = mainWindowViewModel;

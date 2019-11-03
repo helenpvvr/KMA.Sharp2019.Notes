@@ -8,4 +8,6 @@ DBModels/bin/*
 DBModels/obj/*
 NotesWcfService/bin/*
 NotesWcfService/obj/*
+DBAdapter/bin/*
+DBAdapter/obj/*
 MoreThanNotes.sln.DotSettings.user

@@ -44,7 +44,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
         public DateTime CreatedDateTime
         {
             get { return _createdDateTime; }
-            set { _createdDateTime = value; }
+            private set { _createdDateTime = value; }
         }
         public DateTime EditedDateTime
         {
@@ -64,16 +64,19 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
         #endregion
 
         #region Constructor
-        public Note(string title, string noteText, DateTime createdDateTime)
+        public Note(string title, string noteText, User user) : this()
         {
             _guid = Guid.NewGuid();
             _title = title;
             _noteText = noteText;
-            _createdDateTime = createdDateTime;
-            _editedDateTime = createdDateTime;
+            _createdDateTime = DateTime.Now;
+            _editedDateTime = DateTime.Now;
+            _userGuid = user.Guid;
+            _user = user;
+            _user.Notes.Add(this);
         }
 
-        public Note() : this("", "", DateTime.Now)
+        private Note()
         {
 
         }
