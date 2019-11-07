@@ -8,6 +8,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers
         #region static
         private static readonly object Lock = new object();
         private static LoaderManager _instance;
+        
 
         internal static LoaderManager Instance
         {
@@ -20,9 +21,18 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers
                     return _instance = new LoaderManager();
                 }
             }
+            
         }
         #endregion
         private ILoaderOwner _loaderOwner;
+        private ILoaderOwner LoaderOwner
+        {
+            get { return _loaderOwner;}
+            set
+            {
+                _loaderOwner = value;
+            }
+        }
 
         internal void Initialize(ILoaderOwner loaderOwner)
         {

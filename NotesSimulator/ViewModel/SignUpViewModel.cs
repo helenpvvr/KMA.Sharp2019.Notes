@@ -1,12 +1,15 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.ServiceModel;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceReference;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
@@ -79,34 +82,39 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         private async void SignUpImplementation(object obj)
         {
             LoaderManager.Instance.ShowLoader();
-            var result = await Task.Run(() =>
-            {
-                User currentUser;
-                try
-                {
-                    currentUser = EntityWrapper.UserByLogin(_login);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}{ex.Message}");
-                    return false;
-                }
-                if (currentUser != null)
-                {
-                    MessageBox.Show(
-                        $"Sign Up failed fo user {_login}. Reason:{Environment.NewLine}User with sucn name exists.");
-                    return false;
-                }
-                return true;
-            });
+            Thread.Sleep(1000);
             LoaderManager.Instance.HideLoader();
-            if (!result)
-                return;
-            StationManager.CurrentUser = new User(Login, Email, Password);
-            EntityWrapper.AddUser(StationManager.CurrentUser);
-            // TODO remove reference to BDAdapter project
-            MessageBox.Show($"User with name {_login} was created");
-            NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
+         
+            
+            //LoaderManager.Instance.ShowLoader();
+            //var result = await Task.Run(() =>
+            //{
+            //    User currentUser;
+            //    try
+            //    {
+            //        currentUser = EntityWrapper.UserByLogin(_login);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}{ex.Message}");
+            //        return false;
+            //    }
+            //    if (currentUser != null)
+            //    {
+            //        MessageBox.Show(
+            //            $"Sign Up failed fo user {_login}. Reason:{Environment.NewLine}User with sucn name exists.");
+            //        return false;
+            //    }
+            //    return true;
+            //});
+            //LoaderManager.Instance.HideLoader();
+            //if (!result)
+            //    return;
+            //StationManager.CurrentUser = new User(Login, Email, Password);
+            //EntityWrapper.AddUser(StationManager.CurrentUser);
+            //// TODO remove reference to BDAdapter project
+            //MessageBox.Show($"User with name {_login} was created");
+            //NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
         }
         
     }

@@ -58,8 +58,9 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 
         private void SignUpImplementation(object obj)
         {
-            NotesWcfServiceReference.NotesServiceClient client = new NotesServiceClient();
-            MessageBox.Show(client.DoWork());
+       
+            //NotesWcfServiceReference.NotesServiceClient client = new NotesServiceClient();
+            //MessageBox.Show(client.DoWork());
             NavigationManager.Instance.Navigate(ModesEnum.SingUp);
         }
 

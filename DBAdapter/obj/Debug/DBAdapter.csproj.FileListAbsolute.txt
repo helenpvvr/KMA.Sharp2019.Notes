@@ -18,3 +18,23 @@ C:\Projects\APZRP\MoreThanNotes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThan
 C:\Projects\APZRP\MoreThanNotes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.pdb
 C:\Projects\APZRP\MoreThanNotes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.Migrations.InitialMigration.resources
 C:\Projects\APZRP\MoreThanNotes\DBAdapter\obj\Debug\DBAdapter.csproj.GenerateResource.cache
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.exe.config
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.exe
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.pdb
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\EntityFramework.dll
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\EntityFramework.SqlServer.dll
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.dll
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.pdb
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.dll.config
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\EntityFramework.xml
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\EntityFramework.SqlServer.xml
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll.config
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.csprojAssemblyReference.cache
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.Migrations.InitialMigration.resources
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.csproj.GenerateResource.cache
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.csproj.CoreCompileInputs.cache
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.csproj.CopyComplete
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.exe
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.pdb

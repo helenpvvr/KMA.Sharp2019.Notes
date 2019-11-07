@@ -8,7 +8,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
     public class MainWindowViewModel : ILoaderOwner
     {
-        private Visibility _visibility = Visibility.Hidden;
+        private Visibility _visibility = Visibility.Visible;
         private bool _isEnabled = true;
 
         public Visibility LoaderVisibility
