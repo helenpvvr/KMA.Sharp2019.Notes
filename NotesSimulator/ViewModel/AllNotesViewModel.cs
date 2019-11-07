@@ -1,8 +1,6 @@
 ﻿using System;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
@@ -12,7 +10,7 @@ using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
-    class AllNotesViewModel : INotifyPropertyChanged
+    class AllNotesViewModel : BaseViewModel
     {
         private ObservableCollection<Note> _notes;
         private RelayCommand<object> _signOutCommand;
@@ -116,13 +114,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         {
             // TODO create view
             MessageBox.Show("Help");
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

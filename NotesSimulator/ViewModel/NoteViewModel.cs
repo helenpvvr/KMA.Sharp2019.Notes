@@ -13,7 +13,7 @@ using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
-    class NoteViewModel : INotifyPropertyChanged
+    class NoteViewModel : BaseViewModel
     {
         private DateTime? _createdDateTime;
         private DateTime? _editedDateTime;
@@ -133,11 +133,5 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
                 EditedDateTime = StationManager.CurrentNote.EditedDateTime;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

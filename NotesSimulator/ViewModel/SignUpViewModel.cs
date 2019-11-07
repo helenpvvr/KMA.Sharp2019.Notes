@@ -14,7 +14,7 @@ using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
-    class SignUpViewModel : INotifyPropertyChanged
+    class SignUpViewModel : BaseViewModel
     {
         private string _login;
         private string _password;
@@ -72,18 +72,14 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             NavigationManager.Instance.Navigate(ModesEnum.SignIn);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        
-        internal virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+
 
         private async void SignUpImplementation(object obj)
         {
             LoaderManager.Instance.ShowLoader();
-            Thread.Sleep(1000);
-            LoaderManager.Instance.HideLoader();
+            await Task.Run(() => { Thread.Sleep(1000); });
+
+        LoaderManager.Instance.HideLoader();
          
             
             //LoaderManager.Instance.ShowLoader();

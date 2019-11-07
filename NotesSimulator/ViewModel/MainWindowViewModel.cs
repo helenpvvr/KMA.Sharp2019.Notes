@@ -6,17 +6,17 @@ using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
-    public class MainWindowViewModel : ILoaderOwner
+    public class MainWindowViewModel :BaseViewModel, ILoaderOwner
     {
-        private Visibility _visibility = Visibility.Visible;
+        private Visibility _loaderVisibility = Visibility.Hidden;
         private bool _isEnabled = true;
 
         public Visibility LoaderVisibility
         {
-            get { return _visibility; }
+            get { return _loaderVisibility; }
             set
             {
-                _visibility = value;
+                _loaderVisibility = value;
                 OnPropertyChanged();
             }
         }
@@ -39,13 +39,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         internal void StartApplication()
         {
             NavigationManager.Instance.Navigate(StationManager.CurrentUser != null ? ModesEnum.AllNotes : ModesEnum.SignIn);
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

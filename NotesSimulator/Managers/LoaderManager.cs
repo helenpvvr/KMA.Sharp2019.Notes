@@ -25,15 +25,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers
         }
         #endregion
         private ILoaderOwner _loaderOwner;
-        private ILoaderOwner LoaderOwner
-        {
-            get { return _loaderOwner;}
-            set
-            {
-                _loaderOwner = value;
-            }
-        }
-
+     
         internal void Initialize(ILoaderOwner loaderOwner)
         {
             _loaderOwner = loaderOwner;

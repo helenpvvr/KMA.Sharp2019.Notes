@@ -12,7 +12,7 @@ using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceReference;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
-    class SignInViewModel : INotifyPropertyChanged
+    class SignInViewModel : BaseViewModel
     {
         private string _login;
         private string _password;
@@ -100,11 +100,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
                 NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        internal virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }
