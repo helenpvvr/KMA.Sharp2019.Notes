@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Data.Entity.ModelConfiguration;
 using System.Runtime.Serialization;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
 {
     [Serializable]
     [DataContract(IsReference = true)]
-    public class Note
+    public class Note:IDBModel
     {
         #region Fields
         [DataMember]
@@ -82,33 +81,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
         }
         #endregion
 
-        #region EntityFrameworkConfiguration
-        public class NoteEntityConfiguration : EntityTypeConfiguration<Note>
-        {
-            public NoteEntityConfiguration()
-            {
-                ToTable("Notes");
-                HasKey(n => n.Guid);
-
-                Property(p => p.Guid)
-                    .HasColumnName("Guid")
-                    .IsRequired();
-                Property(p => p.Title)
-                    .HasColumnName("Title")
-                    .IsRequired();
-                Property(p => p.NoteText)
-                    .HasColumnName("NoteText")
-                    .IsRequired();
-                Property(p => p.CreatedDateTime)
-                    .HasColumnName("CreatedDateTime")
-                    .IsRequired();
-                Property(p => p.EditedDateTime)
-                    .HasColumnName("EditedDateTime")
-                    .IsRequired();
-            }
-        }
-        #endregion
-
+   
         public void DeleteDatabaseValues()
         {
             _user = null;

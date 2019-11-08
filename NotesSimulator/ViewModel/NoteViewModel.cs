@@ -73,7 +73,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             if (StationManager.CurrentNote == null)
             {
                 StationManager.CurrentNote = new Note("", "", StationManager.CurrentUser);
-                EntityWrapper.AddNote(StationManager.CurrentNote);
+                EntityWrapper wrap = new EntityWrapper();
+                wrap.AddNote(StationManager.CurrentNote);
                 EditedDateTime = null;
             }
             else
@@ -119,7 +120,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
                     StationManager.CurrentNote.NoteText = NoteField;
                     StationManager.CurrentNote.EditedDateTime = DateTime.Now;
 
-                    EntityWrapper.SaveNote(StationManager.CurrentNote);
+                    EntityWrapper wrap = new EntityWrapper();
+                    wrap.SaveNote(StationManager.CurrentNote);
                     return true;
                 }
                 catch (Exception ex)

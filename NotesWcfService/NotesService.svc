@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="NotesWcfService.NotesService" CodeBehind="NotesService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService.NotesService" CodeBehind="NotesService.svc.cs" %>

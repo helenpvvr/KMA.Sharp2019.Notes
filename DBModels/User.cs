@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Runtime.Serialization;
 using KMA.Sharp2019.Notes.MoreThanNotes.Tools;
@@ -8,7 +7,7 @@ using KMA.Sharp2019.Notes.MoreThanNotes.Tools;
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
 {
     [DataContract(IsReference = true)]
-    public class User
+    public class User: IDBModel
     {
         #region Fields
         [DataMember]
@@ -98,24 +97,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
             return _notes.FirstOrDefault(n => n.Guid == guid);
         }
 
-        #region EntityConfiguration
 
-        public class UserEntityConfiguration : EntityTypeConfiguration<User>
-        {
-            public UserEntityConfiguration()
-            {
-                ToTable("Users");
-                HasKey(u => u.Guid);
-
-                Property(u => u.Guid).HasColumnName("Guid").IsRequired();
-                Property(u => u.Login).HasColumnName("Login").IsRequired();
-                Property(u => u.Email).HasColumnName("Email").IsRequired();
-                Property(u => u.Password).HasColumnName("Password").IsRequired();
-
-                HasMany(u => u.Notes).WithRequired(n => n.User).HasForeignKey(n => n.UserGuid).WillCascadeOnDelete(true);
-            }
-        }
-
-        #endregion
     }
 }

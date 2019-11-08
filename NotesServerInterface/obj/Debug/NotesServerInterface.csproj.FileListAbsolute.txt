@@ -1,0 +1,12 @@
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Server.NotesServerInterface.dll
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Server.NotesServerInterface.pdb
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\obj\Debug\NotesServerInterface.csprojAssemblyReference.cache
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\obj\Debug\NotesServerInterface.csproj.CoreCompileInputs.cache
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Server.NotesServerInterface.dll
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Server.NotesServerInterface.pdb
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.dll
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.pdb
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll.config
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\NotesServerInterface\obj\Debug\NotesServerInterface.csproj.CopyComplete

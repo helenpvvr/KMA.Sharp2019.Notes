@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
+using KMA.Sharp2019.Notes.MoreThanNotes.Providers;
+using KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools;
+
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter
 {
@@ -11,36 +15,41 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter
     {
         static void Main(string[] args)
         {
-            User user1 = EntityWrapper.UserByLogin("111");
+           // User user1 = EntityWrapper.UserByLogin("aaa");
             /*Note note1 = new Note("My first note", "Do smth at home", user1);
             EntityWrapper.AddNote(note1);*/
 
-            Note note1 = user1.Notes.First();
+            //Note note1 = user1.Notes.First();
             /*note1.Title += " ... Add this text";
             Console.WriteLine(note1.Title);
             EntityWrapper.SaveNote(note1);
             */
-            Console.WriteLine(note1.Title);
-            EntityWrapper.DeleteNote(note1);
-            Console.WriteLine(user1.Notes.Count);
+            //Console.WriteLine(note1.Title);
+            //EntityWrapper.DeleteNote(note1);
+            //Console.WriteLine(user1.Notes.Count);
 
             using (var context = new MoreThanNotesDBContext())
             {
                 
-                //EntityWrapper.AddUser(user1);
+                EntityWrapper cont = new EntityWrapper();
+                User user1 = cont.UserByLogin("aaa");
+                Console.WriteLine(user1.Login);
+                IDBProvider dbProvider = new EntityWrapper();
+                User user2 = dbProvider.UserByLogin("aaa");
+                //.AddUser(user1);
 
-               // Note note1 = user1.Notes.First();
-               // Console.WriteLine(note1.Title);
-               // Console.WriteLine();
-               //// note1.Title += "Add text to title";
-               // EntityWrapper.DeleteNote(note1);
+                // Note note1 = user1.Notes.First();
+                // Console.WriteLine(note1.Title);
+                // Console.WriteLine();
+                //// note1.Title += "Add text to title";
+                // EntityWrapper.DeleteNote(note1);
 
-               // foreach (var note in user1.Notes)
-               // {
-               //     Console.WriteLine(note.Guid);
-               //     Console.WriteLine(note.Title);
-               //     Console.WriteLine();
-               // }
+                // foreach (var note in user1.Notes)
+                // {
+                //     Console.WriteLine(note.Guid);
+                //     Console.WriteLine(note.Title);
+                //     Console.WriteLine();
+                // }
 
                 Console.WriteLine(" ....... All notes: ..............................................................");
 

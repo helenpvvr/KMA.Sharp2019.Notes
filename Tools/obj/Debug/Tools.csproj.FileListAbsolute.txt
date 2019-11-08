@@ -7,7 +7,6 @@ C:\Projects\APZRP\MoreThanNotes\Tools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNote
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\Tools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll.config
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\Tools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\Tools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb
-D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\Tools\obj\Debug\Tools.csprojAssemblyReference.cache
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\Tools\obj\Debug\Tools.csproj.CoreCompileInputs.cache
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\Tools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\Tools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb

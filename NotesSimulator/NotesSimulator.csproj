@@ -44,6 +44,7 @@
     <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
     </Reference>
+    <Reference Include="KMA.Sharp2019.Notes.MoreThanNotes.DBModels, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -162,7 +163,11 @@
     <None Include="Connected Services\NotesWcfServiceReference\NotesService1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\NotesWcfServiceReference\NotesService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

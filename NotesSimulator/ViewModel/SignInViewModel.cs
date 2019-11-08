@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -58,8 +59,9 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 
         private void SignUpImplementation(object obj)
         {
-       
-            //NotesWcfServiceReference.NotesServiceClient client = new NotesServiceClient();
+                 
+            NotesWcfServiceReference.NotesServiceClient client = new NotesServiceClient();
+            
             //MessageBox.Show(client.DoWork());
             NavigationManager.Instance.Navigate(ModesEnum.SingUp);
         }
@@ -69,17 +71,24 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             LoaderManager.Instance.ShowLoader();
             var result = await Task.Run(() =>
             {
-                User currentUser;
-                try
+                User currentUser = null;
+                using (var myChannelFactory = new ChannelFactory<INotesService>("BasicHttpBinding_INotesService"))
                 {
-                    currentUser = EntityWrapper.UserByLogin(_login);
-                    // TODO delete reference to DBAdapter and use DBManager
+                    INotesService client = myChannelFactory.CreateChannel();
+                    MessageBox.Show(client.GetUserByLogin(_login, _password));
+                    return true;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}{ex.Message}");
-                    return false;
-                }
+
+                //try
+                //{ 
+                //    currentUser = EntityWrapper.UserByLogin(_login);
+                //    // TODO delete reference to DBAdapter and use DBManager
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}{ex.Message}");
+                //    return false;
+                //}
                 if (currentUser == null)
                 {
                     MessageBox.Show(
@@ -91,6 +100,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
                     MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}Wrong Password.");
                     return false;
                 }
+                //if (currentUser == null) return false;
+
                 StationManager.CurrentUser = currentUser;
                 MessageBox.Show($"Sign In successful fo user {_login}.");
                 return true;

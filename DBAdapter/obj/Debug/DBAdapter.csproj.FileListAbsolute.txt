@@ -26,7 +26,6 @@ D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\EntityFramework.SqlS
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.dll
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.pdb
-D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.dll.config
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\EntityFramework.xml
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\EntityFramework.SqlServer.xml
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb
@@ -38,3 +37,6 @@ D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.csproj.Cor
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.csproj.CopyComplete
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.exe
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.pdb
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.dll
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.pdb
+D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools.dll

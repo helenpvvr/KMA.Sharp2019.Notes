@@ -2,10 +2,11 @@
 using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.Migrations;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using System.Data.Entity;
+using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.ModelConfiguration;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter
 {
-    internal class MoreThanNotesDBContext : DbContext
+    public class MoreThanNotesDBContext : DbContext
     {
         public MoreThanNotesDBContext() : base("MoreThenNotesDB")
         {
@@ -17,8 +18,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new User.UserEntityConfiguration());
-            modelBuilder.Configurations.Add(new Note.NoteEntityConfiguration());
+            modelBuilder.Configurations.Add(new UserEntityConfiguration());
+            modelBuilder.Configurations.Add(new NoteEntityConfiguration());
         }
     }
 }

@@ -2,75 +2,88 @@
 using System.Data.Entity;
 using System.Linq;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
+using KMA.Sharp2019.Notes.MoreThanNotes.Providers;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter
 {
-    public static class EntityWrapper
+    public class EntityWrapper:IDBProvider
     {
-        public static bool UserExists(string login)
+        private bool _disposed;
+        private readonly MoreThanNotesDBContext _context;
+        public EntityWrapper()
         {
-            using (var context = new MoreThanNotesDBContext())
-            {
-                return context.Users.Any(u => u.Login == login);
-            }
+            _context = new MoreThanNotesDBContext();
         }
 
-        public static User UserByLogin(string login)
+        ~EntityWrapper()
         {
-            using (var context = new MoreThanNotesDBContext())
-            {
-                return context.Users.Include(u => u.Notes).FirstOrDefault(u => u.Login == login);
-            }
+            Dispose(false);
+        }
+        public bool UserExists(string login)
+        {
+           return _context.Users.Any(u => u.Login == login);
+        }
+
+        public  User UserByLogin(string login)
+        {
+            return _context.Users.Include(u => u.Notes).FirstOrDefault(u => u.Login == login);
+        
         }
 
         // TODO if it needs
-        public static User UserByGuid(Guid guid)
+        public  User UserByGuid(Guid guid)
         {
-            using (var context = new MoreThanNotesDBContext())
-            {
-                return context.Users.Include(u => u.Notes).FirstOrDefault(u => u.Guid == guid);
-            }
+               return _context.Users.Include(u => u.Notes).FirstOrDefault(u => u.Guid == guid);
+
         }
 
-        // TODO all notes (don't need)
-
-        public static void AddUser(User user)
+        public  void AddUser(User user)
         {
-            using (var context = new MoreThanNotesDBContext())
-            {
-                context.Users.Add(user);
-                context.SaveChanges();
-            }
+                _context.Users.Add(user);
+                _context.SaveChanges();
+   
         }
 
-        public static void AddNote(Note note)
+        public  void AddNote(Note note)
         {
-            using (var context = new MoreThanNotesDBContext())
-            {
                 note.DeleteDatabaseValues();
-                context.Notes.Add(note);
-                context.SaveChanges();
-            }
+                _context.Notes.Add(note);
+                _context.SaveChanges();
+            
         }
 
-        public static void SaveNote(Note note)
+        public  void SaveNote(Note note)
         {
-            using (var context = new MoreThanNotesDBContext())
-            {
-                context.Entry(note).State = EntityState.Modified;
-                context.SaveChanges();
-            }
+                _context.Entry(note).State = EntityState.Modified;
+                _context.SaveChanges();
         }
 
-        public static void DeleteNote(Note note)
+        public  void DeleteNote(Note note)
         {
-            using (var context = new MoreThanNotesDBContext())
-            {
                 note.DeleteDatabaseValues();
-                context.Notes.Attach(note);
-                context.Notes.Remove(note);
-                context.SaveChanges();
+                _context.Notes.Attach(note);
+                _context.Notes.Remove(note);
+                _context.SaveChanges();
+
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                _context?.Dispose();
             }
+
+            // Free any unmanaged objects here.
+            _disposed = true;
         }
     }
 }

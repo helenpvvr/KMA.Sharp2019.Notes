@@ -12,7 +12,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
         string DoWork();
 
         [OperationContract]
-        User GetUserByLogin(string login, string password);
+        String GetUserByLogin(string login, string password);
 
         [OperationContract]
         string AddNewUser(string login, string password, string email);

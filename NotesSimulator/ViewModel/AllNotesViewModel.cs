@@ -90,7 +90,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             {
                 try
                 {
-                    EntityWrapper.DeleteNote(SelectedNote);
+                    EntityWrapper wrap = new EntityWrapper();
+                    wrap.DeleteNote(SelectedNote);
                     StationManager.CurrentUser.Notes.RemoveAll(n => n.Guid == SelectedNote.Guid);
                     Notes = new ObservableCollection<Note>(StationManager.CurrentUser.Notes);
                     SelectedNote = null;
