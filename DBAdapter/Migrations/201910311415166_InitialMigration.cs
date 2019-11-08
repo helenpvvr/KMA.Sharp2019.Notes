@@ -1,7 +1,6 @@
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
+  using System.Data.Entity.Migrations;
     
     public partial class InitialMigration : DbMigration
     {

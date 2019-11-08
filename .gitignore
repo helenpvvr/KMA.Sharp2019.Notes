@@ -10,4 +10,14 @@ NotesWcfService/bin/*
 NotesWcfService/obj/*
 DBAdapter/bin/*
 DBAdapter/obj/*
+EntityProvider/bin/*
+EntityProvider/obj/*
+Managers/bin/*
+Managers/obj/*
+Tools/bin/*
+Tools/obj/*
+Providers/bin/*
+Providers/obj/*
+ProviderTools/bin/*
+ProviderTools/obj/*
 MoreThanNotes.sln.DotSettings.user
