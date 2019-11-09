@@ -15,3 +15,19 @@ D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\ProviderTools\obj\Debug\KMA.Sharp2019.No
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\ProviderTools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools.pdb
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.dll
 D:\Course 3.1\APZRP\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.pdb
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools.dll
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools.pdb
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.exe
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.dll
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.dll
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\EntityFramework.dll
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.pdb
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.pdb
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll.config
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\obj\Debug\ProviderTools.csprojAssemblyReference.cache
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\obj\Debug\ProviderTools.csproj.CoreCompileInputs.cache
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\obj\Debug\ProviderTools.csproj.CopyComplete
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools.dll
+D:\Новая папка (3)\KMA.Sharp2019.Notes\ProviderTools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools.pdb

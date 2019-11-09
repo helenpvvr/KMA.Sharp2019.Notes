@@ -32,10 +32,12 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter
             {
                 
                 EntityWrapper cont = new EntityWrapper();
-                User user1 = cont.UserByLogin("aaa");
+                User user2 = new User("111", "1@1", "111");
+                cont.AddUser(user2);
+                User user1 = cont.UserByLogin("111");
                 Console.WriteLine(user1.Login);
                 IDBProvider dbProvider = new EntityWrapper();
-                User user2 = dbProvider.UserByLogin("aaa");
+                //User user2 = dbProvider.UserByLogin("aaa");
                 //.AddUser(user1);
 
                 // Note note1 = user1.Notes.First();
