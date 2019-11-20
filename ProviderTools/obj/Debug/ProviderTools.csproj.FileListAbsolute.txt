@@ -46,3 +46,5 @@ D:\APR\KMA.Sharp2019.Notes\ProviderTools\obj\Debug\ProviderTools.csproj.CoreComp
 D:\APR\KMA.Sharp2019.Notes\ProviderTools\obj\Debug\ProviderTools.csproj.CopyComplete
 D:\APR\KMA.Sharp2019.Notes\ProviderTools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools.dll
 D:\APR\KMA.Sharp2019.Notes\ProviderTools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools.pdb
+D:\APR\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\EntityFramework.dll
+D:\APR\KMA.Sharp2019.Notes\ProviderTools\bin\Debug\EntityFramework.xml

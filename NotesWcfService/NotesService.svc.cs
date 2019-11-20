@@ -16,7 +16,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
             return "I WORK";
         }
 
-        public User GetUserByLogin(string login, string password)
+        public User GetUserByLogin(string login)
         {
             User user;
             try
@@ -29,9 +29,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
                 Console.WriteLine("There is an error: \n"+ex.Message);
                 return null;
             }
-
-            if (user == null) return null;
-            return (user.CheckPassword(password)) ? user : null;
+            return user;
          
            
         }
