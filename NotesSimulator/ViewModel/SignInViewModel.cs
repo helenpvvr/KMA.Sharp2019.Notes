@@ -75,8 +75,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
                 using (var myChannelFactory = new ChannelFactory<INotesService>("BasicHttpBinding_INotesService"))
                 {
                     INotesService client = myChannelFactory.CreateChannel();
-                    MessageBox.Show(client.GetUserByLogin(_login, _password));
-                    return true;
+                    currentUser = client.GetUserByLogin(_login, _password);
+                    //return true;
                 }
 
                 //try

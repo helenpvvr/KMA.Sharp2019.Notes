@@ -22,10 +22,10 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceRefere
         System.Threading.Tasks.Task<string> DoWorkAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/GetUserByLogin", ReplyAction="http://tempuri.org/INotesService/GetUserByLoginResponse")]
-        string GetUserByLogin(string login, string password);
+        KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User GetUserByLogin(string login, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/GetUserByLogin", ReplyAction="http://tempuri.org/INotesService/GetUserByLoginResponse")]
-        System.Threading.Tasks.Task<string> GetUserByLoginAsync(string login, string password);
+        System.Threading.Tasks.Task<KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User> GetUserByLoginAsync(string login, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/AddNewUser", ReplyAction="http://tempuri.org/INotesService/AddNewUserResponse")]
         string AddNewUser(string login, string password, string email);
@@ -87,11 +87,11 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceRefere
             return base.Channel.DoWorkAsync();
         }
         
-        public string GetUserByLogin(string login, string password) {
+        public KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User GetUserByLogin(string login, string password) {
             return base.Channel.GetUserByLogin(login, password);
         }
         
-        public System.Threading.Tasks.Task<string> GetUserByLoginAsync(string login, string password) {
+        public System.Threading.Tasks.Task<KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User> GetUserByLoginAsync(string login, string password) {
             return base.Channel.GetUserByLoginAsync(login, password);
         }
         
