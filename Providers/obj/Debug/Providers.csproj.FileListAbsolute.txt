@@ -22,15 +22,3 @@ D:\Новая папка (3)\KMA.Sharp2019.Notes\Providers\obj\Debug\Providers.c
 D:\Новая папка (3)\KMA.Sharp2019.Notes\Providers\obj\Debug\Providers.csproj.CopyComplete
 D:\Новая папка (3)\KMA.Sharp2019.Notes\Providers\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.dll
 D:\Новая папка (3)\KMA.Sharp2019.Notes\Providers\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.pdb
-D:\APR\KMA.Sharp2019.Notes\Providers\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.dll
-D:\APR\KMA.Sharp2019.Notes\Providers\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.pdb
-D:\APR\KMA.Sharp2019.Notes\Providers\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.dll
-D:\APR\KMA.Sharp2019.Notes\Providers\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
-D:\APR\KMA.Sharp2019.Notes\Providers\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.pdb
-D:\APR\KMA.Sharp2019.Notes\Providers\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb
-D:\APR\KMA.Sharp2019.Notes\Providers\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll.config
-D:\APR\KMA.Sharp2019.Notes\Providers\obj\Debug\Providers.csprojAssemblyReference.cache
-D:\APR\KMA.Sharp2019.Notes\Providers\obj\Debug\Providers.csproj.CoreCompileInputs.cache
-D:\APR\KMA.Sharp2019.Notes\Providers\obj\Debug\Providers.csproj.CopyComplete
-D:\APR\KMA.Sharp2019.Notes\Providers\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.dll
-D:\APR\KMA.Sharp2019.Notes\Providers\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.pdb

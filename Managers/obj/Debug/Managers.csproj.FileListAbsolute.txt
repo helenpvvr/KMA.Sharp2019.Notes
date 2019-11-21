@@ -9,9 +9,3 @@ D:\Новая папка (3)\KMA.Sharp2019.Notes\Managers\obj\Debug\Managers.csp
 D:\Новая папка (3)\KMA.Sharp2019.Notes\Managers\obj\Debug\Managers.csproj.CoreCompileInputs.cache
 D:\Новая папка (3)\KMA.Sharp2019.Notes\Managers\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Managers.dll
 D:\Новая папка (3)\KMA.Sharp2019.Notes\Managers\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Managers.pdb
-D:\APR\KMA.Sharp2019.Notes\Managers\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Managers.dll
-D:\APR\KMA.Sharp2019.Notes\Managers\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Managers.pdb
-D:\APR\KMA.Sharp2019.Notes\Managers\obj\Debug\Managers.csprojAssemblyReference.cache
-D:\APR\KMA.Sharp2019.Notes\Managers\obj\Debug\Managers.csproj.CoreCompileInputs.cache
-D:\APR\KMA.Sharp2019.Notes\Managers\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Managers.dll
-D:\APR\KMA.Sharp2019.Notes\Managers\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Managers.pdb

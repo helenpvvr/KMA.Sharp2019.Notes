@@ -62,25 +62,3 @@ D:\Новая папка (3)\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.c
 D:\Новая папка (3)\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.csproj.CopyComplete
 D:\Новая папка (3)\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.exe
 D:\Новая папка (3)\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.pdb
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.exe.config
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.exe
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.pdb
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\EntityFramework.dll
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\EntityFramework.SqlServer.dll
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.dll
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.dll
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools.dll
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBModels.pdb
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Providers.pdb
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\EntityFramework.xml
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\EntityFramework.SqlServer.xml
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll.config
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.csprojAssemblyReference.cache
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.Migrations.InitialMigration.resources
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.csproj.GenerateResource.cache
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.csproj.CoreCompileInputs.cache
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\DBAdapter.csproj.CopyComplete
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.exe
-D:\APR\KMA.Sharp2019.Notes\DBAdapter\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.pdb

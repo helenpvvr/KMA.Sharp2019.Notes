@@ -17,10 +17,3 @@ D:\Новая папка (3)\KMA.Sharp2019.Notes\Tools\obj\Debug\Tools.csprojAss
 D:\Новая папка (3)\KMA.Sharp2019.Notes\Tools\obj\Debug\Tools.csproj.CoreCompileInputs.cache
 D:\Новая папка (3)\KMA.Sharp2019.Notes\Tools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
 D:\Новая папка (3)\KMA.Sharp2019.Notes\Tools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb
-D:\APR\KMA.Sharp2019.Notes\Tools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll.config
-D:\APR\KMA.Sharp2019.Notes\Tools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
-D:\APR\KMA.Sharp2019.Notes\Tools\bin\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb
-D:\APR\KMA.Sharp2019.Notes\Tools\obj\Debug\Tools.csprojAssemblyReference.cache
-D:\APR\KMA.Sharp2019.Notes\Tools\obj\Debug\Tools.csproj.CoreCompileInputs.cache
-D:\APR\KMA.Sharp2019.Notes\Tools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.dll
-D:\APR\KMA.Sharp2019.Notes\Tools\obj\Debug\KMA.Sharp2019.Notes.MoreThanNotes.Tools.pdb
