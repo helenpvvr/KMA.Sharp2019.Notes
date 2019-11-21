@@ -6,8 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using KMA.Sharp2019.Notes.MoreThanNotes.Providers;
-using KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools;
-
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter
 {
