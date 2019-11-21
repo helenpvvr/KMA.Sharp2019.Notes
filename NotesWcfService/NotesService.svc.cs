@@ -1,15 +1,11 @@
 ﻿using System;
-using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using KMA.Sharp2019.Notes.MoreThanNotes.Providers;
-using KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools;
 using KMA.Sharp2019.Notes.MoreThanNotes.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
 {
-    // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени класса "NotesService" в коде, SVC-файле и файле конфигурации.
-    // ПРИМЕЧАНИЕ. Чтобы запустить клиент проверки WCF для тестирования службы, выберите элементы NotesService.svc или NotesService.svc.cs в обозревателе решений и начните отладку.
-    public class NotesService : INotesService
+   public class NotesService : INotesService
     {
         public string DoWork()
         {
@@ -35,9 +31,19 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
         }
 
 
-        public string AddNewUser(string login, string password, string email)
+        public bool AddNewUser(User user)
         {
-            throw new NotImplementedException();
+            try
+            {
+                IDBProvider dbProvider = ProviderFactory.CreateNewDBProvider();
+                dbProvider.AddUser(user);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("There is an error: \n" + ex.Message);
+                return false;
+            }
+            return true;
         }
 
         public string AddNewNote(Note note)

@@ -14,8 +14,15 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers
                 INotesService client = myChannelFactory.CreateChannel();
                 return client.GetUserByLogin(login);
             }
+        }
 
-           
+        public static bool AddUser(User user)
+        {
+            using (var myChannelFactory = new ChannelFactory<INotesService>("BasicHttpBinding_INotesService"))
+            {
+                INotesService client = myChannelFactory.CreateChannel();
+                return client.AddNewUser(user);
+            }
         }
     }
 }

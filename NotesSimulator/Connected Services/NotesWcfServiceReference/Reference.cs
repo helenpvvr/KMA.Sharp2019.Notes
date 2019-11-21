@@ -28,10 +28,10 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceRefere
         System.Threading.Tasks.Task<KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User> GetUserByLoginAsync(string login);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/AddNewUser", ReplyAction="http://tempuri.org/INotesService/AddNewUserResponse")]
-        string AddNewUser(string login, string password, string email);
+        bool AddNewUser(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/AddNewUser", ReplyAction="http://tempuri.org/INotesService/AddNewUserResponse")]
-        System.Threading.Tasks.Task<string> AddNewUserAsync(string login, string password, string email);
+        System.Threading.Tasks.Task<bool> AddNewUserAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/AddNewNote", ReplyAction="http://tempuri.org/INotesService/AddNewNoteResponse")]
         string AddNewNote(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
@@ -95,12 +95,12 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceRefere
             return base.Channel.GetUserByLoginAsync(login);
         }
         
-        public string AddNewUser(string login, string password, string email) {
-            return base.Channel.AddNewUser(login, password, email);
+        public bool AddNewUser(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User user) {
+            return base.Channel.AddNewUser(user);
         }
         
-        public System.Threading.Tasks.Task<string> AddNewUserAsync(string login, string password, string email) {
-            return base.Channel.AddNewUserAsync(login, password, email);
+        public System.Threading.Tasks.Task<bool> AddNewUserAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User user) {
+            return base.Channel.AddNewUserAsync(user);
         }
         
         public string AddNewNote(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {

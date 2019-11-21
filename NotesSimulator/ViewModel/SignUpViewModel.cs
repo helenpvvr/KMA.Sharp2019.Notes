@@ -1,15 +1,9 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.ServiceModel;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
-using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceReference;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
@@ -23,11 +17,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         private RelayCommand<object> _signUpCommand;
         private RelayCommand<object> _signInCommand;
 
-        public SignUpViewModel()
-        {
-        }
-
-        public string Login
+         public string Login
         {
             get => _login;
             set
@@ -76,31 +66,10 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 
         private async void SignUpImplementation(object obj)
         {
-        //    LoaderManager.Instance.ShowLoader();
-        //    await Task.Run(() =>
-        //    {
-        //        NotesServiceClient client = new NotesServiceClient();
-        //        client.AddNewUser(_login, _password, _email);
-        //    });
-            
-           
-        //LoaderManager.Instance.HideLoader();
-         
-            
             LoaderManager.Instance.ShowLoader();
             var result = await Task.Run(() =>
             {
-                User currentUser;
-                try
-                {
-                     EntityWrapper wrapp = new EntityWrapper();
-                     currentUser = wrapp.UserByLogin(_login);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}{ex.Message}");
-                    return false;
-                }
+                User currentUser = ConnectionManager.GetUserByLogin(_login);
                 if (currentUser != null)
                 {
                     MessageBox.Show(
@@ -109,15 +78,26 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
                 }
                 return true;
             });
-            LoaderManager.Instance.HideLoader();
+          
             if (!result)
+            {
+                LoaderManager.Instance.HideLoader();
                 return;
+
+            }
             StationManager.CurrentUser = new User(Login, Email, Password);
-            EntityWrapper wrap = new EntityWrapper();
-            wrap.AddUser(StationManager.CurrentUser);
-            // TODO remove reference to BDAdapter project
-            MessageBox.Show($"User with name {_login} was created");
-            NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
+            bool res  = ConnectionManager.AddUser(StationManager.CurrentUser);
+            LoaderManager.Instance.HideLoader();
+            if (res)
+            {
+                MessageBox.Show($"User with name {_login} was created");
+                NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
+            }
+            else
+            {
+                MessageBox.Show($"User was not created");
+            }
+
         }
         
     }

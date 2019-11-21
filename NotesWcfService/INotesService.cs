@@ -1,10 +1,8 @@
-﻿using System;
-using System.ServiceModel;
+﻿using System.ServiceModel;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
 {
-    // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени интерфейса "INotesService" в коде и файле конфигурации.
     [ServiceContract]
     public interface INotesService
     {
@@ -15,7 +13,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
         User GetUserByLogin(string login);
 
         [OperationContract]
-        string AddNewUser(string login, string password, string email);
+        bool AddNewUser(User user);
 
         [OperationContract]
         string AddNewNote(Note note);
