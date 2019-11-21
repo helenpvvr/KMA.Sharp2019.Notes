@@ -6,10 +6,12 @@ using KMA.Sharp2019.Notes.MoreThanNotes.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
 {
+   
     [DataContract(IsReference = true)]
     public class User: IDBModel
     {
         #region Fields
+
         [DataMember]
         private Guid _guid;
         [DataMember]
@@ -23,11 +25,13 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
         #endregion
 
         #region Properties
+        
         public Guid Guid
         {
             get { return _guid; }
             private set { _guid = value; }
         }
+       
         public string Login
         {
             get { return _login; }

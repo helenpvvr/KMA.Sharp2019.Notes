@@ -1,15 +1,10 @@
 ﻿using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter;
-using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
-using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceReference;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
@@ -21,18 +16,13 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         private RelayCommand<object> _signUpCommand;
         private RelayCommand<object> _signInCommand;
 
-        public SignInViewModel()
-        {
-            
-        }
-
 
         public string Login
         {
             get => _login;
             set
             {
-                _login = value;
+                _login = value.Replace(" ", "");
                 OnPropertyChanged();
             }
         }
@@ -54,15 +44,17 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 
         public ICommand SignInCommand
         {
-            get { return _signInCommand ?? (_signInCommand = new RelayCommand<object>(SignInImplementation)); }
+            get { return _signInCommand ?? (_signInCommand = new RelayCommand<object>(SignInImplementation, SignInCanExecute)); }
+        }
+
+        private bool SignInCanExecute(object obj)
+        {
+            return !String.IsNullOrEmpty(_login) &&
+                   !String.IsNullOrEmpty(_password);
         }
 
         private void SignUpImplementation(object obj)
         {
-                 
-            NotesWcfServiceReference.NotesServiceClient client = new NotesServiceClient();
-            
-            //MessageBox.Show(client.DoWork());
             NavigationManager.Instance.Navigate(ModesEnum.SingUp);
         }
 
@@ -71,44 +63,28 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             LoaderManager.Instance.ShowLoader();
             var result = await Task.Run(() =>
             {
-                User currentUser = null;
-                using (var myChannelFactory = new ChannelFactory<INotesService>("BasicHttpBinding_INotesService"))
-                {
-                    INotesService client = myChannelFactory.CreateChannel();
-                    MessageBox.Show(client.GetUserByLogin(_login, _password));
-                    return true;
-                }
-
-                //try
-                //{ 
-                //    currentUser = EntityWrapper.UserByLogin(_login);
-                //    // TODO delete reference to DBAdapter and use DBManager
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}{ex.Message}");
-                //    return false;
-                //}
+                User currentUser = ConnectionManager.GetUserByLogin(_login);
                 if (currentUser == null)
                 {
                     MessageBox.Show(
-                        $"Sign In failed fo user {_login}. Reason:{Environment.NewLine}User does not exist.");
+                        $"Sign In failed fo user {_login}. Reason:{Environment.NewLine}Wrong password or user doesn't exist.");
                     return false;
                 }
                 if (!currentUser.CheckPassword(_password))
                 {
-                    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}Wrong Password.");
+                    MessageBox.Show($"Sign In failed fo user {_login}. Reason:{Environment.NewLine}Wrong password or user doesn't exist.");
                     return false;
                 }
-                //if (currentUser == null) return false;
-
                 StationManager.CurrentUser = currentUser;
                 MessageBox.Show($"Sign In successful fo user {_login}.");
                 return true;
             });
             LoaderManager.Instance.HideLoader();
             if (result)
+            {
+                SerializationManager.Serialize(StationManager.CurrentUser.Guid.ToString(), FileFolderHelper.StorageFilePath);
                 NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
+            }
         }
 
 

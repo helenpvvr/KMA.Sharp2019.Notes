@@ -23,10 +23,10 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="NotesService.xsd" MetadataType="Schema" ID="4177515a-4aa1-4949-b155-442f8fbdcfd1" SourceId="1" SourceUrl="http://localhost:59735/NotesService.svc?xsd=xsd0" />
-    <MetadataFile FileName="NotesService2.xsd" MetadataType="Schema" ID="35a6910a-2b60-4a0a-b823-bb2daf1a8dae" SourceId="1" SourceUrl="http://localhost:59735/NotesService.svc?xsd=xsd2" />
     <MetadataFile FileName="NotesService.disco" MetadataType="Disco" ID="e0be4eea-d20d-432e-ada1-fb652f9dfd77" SourceId="1" SourceUrl="http://localhost:59735/NotesService.svc?disco" />
     <MetadataFile FileName="NotesService1.xsd" MetadataType="Schema" ID="38b475d2-2f3a-45d3-952c-0586cf0825d2" SourceId="1" SourceUrl="http://localhost:59735/NotesService.svc?xsd=xsd1" />
     <MetadataFile FileName="NotesService.wsdl" MetadataType="Wsdl" ID="6f4b2a21-949f-4d8c-9370-5e680bf83e85" SourceId="1" SourceUrl="http://localhost:59735/NotesService.svc?wsdl" />
+    <MetadataFile FileName="NotesService2.xsd" MetadataType="Schema" ID="35a6910a-2b60-4a0a-b823-bb2daf1a8dae" SourceId="1" SourceUrl="http://localhost:59735/NotesService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

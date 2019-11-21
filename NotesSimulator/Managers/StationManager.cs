@@ -1,6 +1,7 @@
 ﻿using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using System;
 using System.Windows;
+using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers
 {

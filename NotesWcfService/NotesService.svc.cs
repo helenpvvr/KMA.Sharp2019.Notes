@@ -1,22 +1,18 @@
 ﻿using System;
-using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using KMA.Sharp2019.Notes.MoreThanNotes.Providers;
-using KMA.Sharp2019.Notes.MoreThanNotes.ProviderTools;
 using KMA.Sharp2019.Notes.MoreThanNotes.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
 {
-    // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени класса "NotesService" в коде, SVC-файле и файле конфигурации.
-    // ПРИМЕЧАНИЕ. Чтобы запустить клиент проверки WCF для тестирования службы, выберите элементы NotesService.svc или NotesService.svc.cs в обозревателе решений и начните отладку.
-    public class NotesService : INotesService
+   public class NotesService : INotesService
     {
         public string DoWork()
         {
             return "I WORK";
         }
 
-        public String GetUserByLogin(string login, string password)
+        public User GetUserByLogin(string login)
         {
             User user;
             try
@@ -26,34 +22,89 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                Console.WriteLine("There is an error: \n"+ex.Message);
+                return null;
             }
-
-            if (user == null) return "Sorry";
-                //return (user.CheckPassword(password)) ? user : null;
-          return "Sucsess";
+            return user;
+         
            
         }
 
-
-        public string AddNewUser(string login, string password, string email)
+        public User GetUserByGuid(Guid guid)
         {
-            throw new NotImplementedException();
+            User user;
+            try
+            {
+                IDBProvider dbProvider = ProviderFactory.CreateNewDBProvider();
+                user = dbProvider.UserByGuid(guid);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("There is an error: \n" + ex.Message);
+                return null;
+            }
+            return user;
         }
 
-        public string AddNewNote(Note note)
+
+        public bool AddNewUser(User user)
         {
-            throw new NotImplementedException();
+            try
+            {
+                IDBProvider dbProvider = ProviderFactory.CreateNewDBProvider();
+                dbProvider.AddUser(user);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("There is an error: \n" + ex.Message);
+                return false;
+            }
+            return true;
         }
 
-        public string DeleteNotes(Note note)
+        public bool AddNewNote(Note note)
         {
-            throw new NotImplementedException();
+            try
+            {
+                IDBProvider dbProvider = ProviderFactory.CreateNewDBProvider();
+                dbProvider.AddNote(note);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("There is an error: \n" + ex.Message);
+                return false;
+            }
+            return true;
         }
 
-        public string SaveNote(Note note)
+        public bool DeleteNotes(Note note)
         {
-            throw new NotImplementedException();
+            try
+            {
+                IDBProvider dbProvider = ProviderFactory.CreateNewDBProvider();
+                dbProvider.DeleteNote(note);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("There is an error: \n" + ex.Message);
+                return false;
+            }
+            return true;
+        }
+
+        public bool SaveNote(Note note)
+        {
+            try
+            {
+                IDBProvider dbProvider = ProviderFactory.CreateNewDBProvider();
+                dbProvider.SaveNote(note);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("There is an error: \n" + ex.Message);
+                return false;
+            }
+            return true;
         }
     }
 }

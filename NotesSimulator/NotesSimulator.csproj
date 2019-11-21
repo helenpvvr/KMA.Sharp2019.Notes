@@ -75,11 +75,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Managers\ConnectionManager.cs" />
     <Compile Include="Managers\LoaderManager.cs" />
     <Compile Include="Managers\NavigationManager.cs" />
+    <Compile Include="Managers\SerializationManager.cs" />
     <Compile Include="Managers\StationManager.cs" />
     <Compile Include="Properties\Annotation.cs" />
     <Compile Include="Tools\BaseViewModel.cs" />
+    <Compile Include="Tools\FileFolderHelper.cs" />
     <Compile Include="Tools\Controls\PasswordControl.xaml.cs">
       <DependentUpon>PasswordControl.xaml</DependentUpon>
     </Compile>
@@ -214,6 +217,10 @@
     <ProjectReference Include="..\DBModels\DBModels.csproj">
       <Project>{ada1705d-f206-4131-b124-505a9adc6a21}</Project>
       <Name>DBModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{a491b18f-8904-4f95-9a31-3970782354e8}</Project>
+      <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
