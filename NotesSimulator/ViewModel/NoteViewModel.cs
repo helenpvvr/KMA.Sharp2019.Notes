@@ -1,12 +1,7 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
@@ -73,8 +68,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             if (StationManager.CurrentNote == null)
             {
                 StationManager.CurrentNote = new Note("", "", StationManager.CurrentUser);
-                EntityWrapper wrap = new EntityWrapper();
-                wrap.AddNote(StationManager.CurrentNote);
+                ConnectionManager.AddNote(StationManager.CurrentNote);
                 EditedDateTime = null;
             }
             else
@@ -115,13 +109,10 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             {
                 try
                 {
-                    //Thread.Sleep(100);
                     StationManager.CurrentNote.Title = Title;
                     StationManager.CurrentNote.NoteText = NoteField;
                     StationManager.CurrentNote.EditedDateTime = DateTime.Now;
-
-                    EntityWrapper wrap = new EntityWrapper();
-                    wrap.SaveNote(StationManager.CurrentNote);
+                    ConnectionManager.SaveNote(StationManager.CurrentNote);
                     return true;
                 }
                 catch (Exception ex)

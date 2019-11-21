@@ -46,19 +46,49 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
             return true;
         }
 
-        public string AddNewNote(Note note)
+        public bool AddNewNote(Note note)
         {
-            throw new NotImplementedException();
+            try
+            {
+                IDBProvider dbProvider = ProviderFactory.CreateNewDBProvider();
+                dbProvider.AddNote(note);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("There is an error: \n" + ex.Message);
+                return false;
+            }
+            return true;
         }
 
-        public string DeleteNotes(Note note)
+        public bool DeleteNotes(Note note)
         {
-            throw new NotImplementedException();
+            try
+            {
+                IDBProvider dbProvider = ProviderFactory.CreateNewDBProvider();
+                dbProvider.DeleteNote(note);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("There is an error: \n" + ex.Message);
+                return false;
+            }
+            return true;
         }
 
-        public string SaveNote(Note note)
+        public bool SaveNote(Note note)
         {
-            throw new NotImplementedException();
+            try
+            {
+                IDBProvider dbProvider = ProviderFactory.CreateNewDBProvider();
+                dbProvider.SaveNote(note);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("There is an error: \n" + ex.Message);
+                return false;
+            }
+            return true;
         }
     }
 }

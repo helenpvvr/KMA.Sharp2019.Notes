@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows;
+﻿using System.Windows;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 

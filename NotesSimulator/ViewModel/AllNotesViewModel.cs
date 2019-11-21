@@ -1,11 +1,9 @@
-﻿using System;
-using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
+﻿using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 using System.Windows.Input;
-using KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
@@ -84,23 +82,22 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 
         private async void DeleteNoteImplementation(object obj)
         {
-            // TODO Ask if it is correct
+            // TODO Ask if it is correct (I don't think that we should)
             LoaderManager.Instance.ShowLoader();
             await Task.Run(() =>
             {
-                try
-                {
-                    EntityWrapper wrap = new EntityWrapper();
-                    wrap.DeleteNote(SelectedNote);
-                    StationManager.CurrentUser.Notes.RemoveAll(n => n.Guid == SelectedNote.Guid);
-                    Notes = new ObservableCollection<Note>(StationManager.CurrentUser.Notes);
-                    SelectedNote = null;
-                    StationManager.CurrentNote = null;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Deleting note was failed. Reason:{Environment.NewLine}{ex.Message}");
-                }
+               bool res = ConnectionManager.DeleteNote(SelectedNote);
+                    if (res)
+                    {
+                        StationManager.CurrentUser.Notes.RemoveAll(n => n.Guid == SelectedNote.Guid);
+                        Notes = new ObservableCollection<Note>(StationManager.CurrentUser.Notes);
+                        SelectedNote = null;
+                        StationManager.CurrentNote = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Deleting note was failed.");
+                    }
             });
             LoaderManager.Instance.HideLoader();
         }

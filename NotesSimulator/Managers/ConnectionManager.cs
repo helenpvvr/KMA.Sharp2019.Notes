@@ -24,5 +24,31 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers
                 return client.AddNewUser(user);
             }
         }
+
+        public static bool DeleteNote(Note note)
+        {
+            using (var myChannelFactory = new ChannelFactory<INotesService>("BasicHttpBinding_INotesService"))
+            {
+                INotesService client = myChannelFactory.CreateChannel();
+                return client.DeleteNotes(note);
+            }
+        }
+
+        public static bool AddNote(Note note)
+        {
+            using (var myChannelFactory = new ChannelFactory<INotesService>("BasicHttpBinding_INotesService"))
+            {
+                INotesService client = myChannelFactory.CreateChannel();
+                return client.AddNewNote(note);
+            }
+        }
+        public static bool SaveNote(Note note)
+        {
+            using (var myChannelFactory = new ChannelFactory<INotesService>("BasicHttpBinding_INotesService"))
+            {
+                INotesService client = myChannelFactory.CreateChannel();
+                return client.SaveNote(note);
+            }
+        }
     }
 }

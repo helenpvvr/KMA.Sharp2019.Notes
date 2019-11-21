@@ -7,22 +7,19 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
     public interface INotesService
     {
         [OperationContract]
-        string DoWork();
-
-        [OperationContract]
         User GetUserByLogin(string login);
 
         [OperationContract]
         bool AddNewUser(User user);
 
         [OperationContract]
-        string AddNewNote(Note note);
+        bool AddNewNote(Note note);
 
         [OperationContract]
-        string DeleteNotes(Note note);
+        bool DeleteNotes(Note note);
 
         [OperationContract]
-        string SaveNote(Note note);
+        bool SaveNote(Note note);
 
 
     }

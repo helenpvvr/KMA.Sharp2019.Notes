@@ -15,12 +15,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceRefere
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="NotesWcfServiceReference.INotesService")]
     public interface INotesService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/DoWork", ReplyAction="http://tempuri.org/INotesService/DoWorkResponse")]
-        string DoWork();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/DoWork", ReplyAction="http://tempuri.org/INotesService/DoWorkResponse")]
-        System.Threading.Tasks.Task<string> DoWorkAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/GetUserByLogin", ReplyAction="http://tempuri.org/INotesService/GetUserByLoginResponse")]
         KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User GetUserByLogin(string login);
         
@@ -34,22 +28,22 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceRefere
         System.Threading.Tasks.Task<bool> AddNewUserAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/AddNewNote", ReplyAction="http://tempuri.org/INotesService/AddNewNoteResponse")]
-        string AddNewNote(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
+        bool AddNewNote(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/AddNewNote", ReplyAction="http://tempuri.org/INotesService/AddNewNoteResponse")]
-        System.Threading.Tasks.Task<string> AddNewNoteAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
+        System.Threading.Tasks.Task<bool> AddNewNoteAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/DeleteNotes", ReplyAction="http://tempuri.org/INotesService/DeleteNotesResponse")]
-        string DeleteNotes(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
+        bool DeleteNotes(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/DeleteNotes", ReplyAction="http://tempuri.org/INotesService/DeleteNotesResponse")]
-        System.Threading.Tasks.Task<string> DeleteNotesAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
+        System.Threading.Tasks.Task<bool> DeleteNotesAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/SaveNote", ReplyAction="http://tempuri.org/INotesService/SaveNoteResponse")]
-        string SaveNote(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
+        bool SaveNote(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/SaveNote", ReplyAction="http://tempuri.org/INotesService/SaveNoteResponse")]
-        System.Threading.Tasks.Task<string> SaveNoteAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
+        System.Threading.Tasks.Task<bool> SaveNoteAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -79,14 +73,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceRefere
                 base(binding, remoteAddress) {
         }
         
-        public string DoWork() {
-            return base.Channel.DoWork();
-        }
-        
-        public System.Threading.Tasks.Task<string> DoWorkAsync() {
-            return base.Channel.DoWorkAsync();
-        }
-        
         public KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User GetUserByLogin(string login) {
             return base.Channel.GetUserByLogin(login);
         }
@@ -103,27 +89,27 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceRefere
             return base.Channel.AddNewUserAsync(user);
         }
         
-        public string AddNewNote(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
+        public bool AddNewNote(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
             return base.Channel.AddNewNote(note);
         }
         
-        public System.Threading.Tasks.Task<string> AddNewNoteAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
+        public System.Threading.Tasks.Task<bool> AddNewNoteAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
             return base.Channel.AddNewNoteAsync(note);
         }
         
-        public string DeleteNotes(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
+        public bool DeleteNotes(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
             return base.Channel.DeleteNotes(note);
         }
         
-        public System.Threading.Tasks.Task<string> DeleteNotesAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
+        public System.Threading.Tasks.Task<bool> DeleteNotesAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
             return base.Channel.DeleteNotesAsync(note);
         }
         
-        public string SaveNote(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
+        public bool SaveNote(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
             return base.Channel.SaveNote(note);
         }
         
-        public System.Threading.Tasks.Task<string> SaveNoteAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
+        public System.Threading.Tasks.Task<bool> SaveNoteAsync(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.Note note) {
             return base.Channel.SaveNoteAsync(note);
         }
     }
