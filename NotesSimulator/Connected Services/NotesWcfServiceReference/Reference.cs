@@ -21,6 +21,12 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceRefere
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/GetUserByLogin", ReplyAction="http://tempuri.org/INotesService/GetUserByLoginResponse")]
         System.Threading.Tasks.Task<KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User> GetUserByLoginAsync(string login);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/GetUserByGuid", ReplyAction="http://tempuri.org/INotesService/GetUserByGuidResponse")]
+        KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User GetUserByGuid(System.Guid guid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/GetUserByGuid", ReplyAction="http://tempuri.org/INotesService/GetUserByGuidResponse")]
+        System.Threading.Tasks.Task<KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User> GetUserByGuidAsync(System.Guid guid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INotesService/AddNewUser", ReplyAction="http://tempuri.org/INotesService/AddNewUserResponse")]
         bool AddNewUser(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User user);
         
@@ -79,6 +85,14 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceRefere
         
         public System.Threading.Tasks.Task<KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User> GetUserByLoginAsync(string login) {
             return base.Channel.GetUserByLoginAsync(login);
+        }
+        
+        public KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User GetUserByGuid(System.Guid guid) {
+            return base.Channel.GetUserByGuid(guid);
+        }
+        
+        public System.Threading.Tasks.Task<KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User> GetUserByGuidAsync(System.Guid guid) {
+            return base.Channel.GetUserByGuidAsync(guid);
         }
         
         public bool AddNewUser(KMA.Sharp2019.Notes.MoreThanNotes.DBModels.User user) {

@@ -71,6 +71,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         private void SignOutImplementation(object obj)
         {
             StationManager.CurrentUser = null;
+            SerializationManager.DeleteSerialization(FileFolderHelper.StorageFilePath);
             NavigationManager.Instance.Navigate(ModesEnum.SignIn);
         }
 

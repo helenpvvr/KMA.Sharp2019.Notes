@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.ServiceModel;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceReference;
@@ -48,6 +49,15 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers
             {
                 INotesService client = myChannelFactory.CreateChannel();
                 return client.SaveNote(note);
+            }
+        }
+        public static User GetUserByGuid(String guid)
+        {
+            using (var myChannelFactory = new ChannelFactory<INotesService>("BasicHttpBinding_INotesService"))
+            {
+                INotesService client = myChannelFactory.CreateChannel();
+                return client.GetUserByGuid(Guid.Parse(guid));
+                
             }
         }
     }

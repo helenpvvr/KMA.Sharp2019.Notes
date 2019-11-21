@@ -10,6 +10,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.Providers
         User UserByGuid(Guid guid);
         void AddUser(User user);
         void AddNote(Note note);
+
         void SaveNote(Note note);
         void DeleteNote(Note note);
 

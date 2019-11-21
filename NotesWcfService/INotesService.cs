@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using System;
+using System.ServiceModel;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
@@ -8,6 +9,9 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
     {
         [OperationContract]
         User GetUserByLogin(string login);
+
+        [OperationContract]
+        User GetUserByGuid(Guid guid);
 
         [OperationContract]
         bool AddNewUser(User user);
@@ -20,6 +24,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
 
         [OperationContract]
         bool SaveNote(Note note);
+
 
 
     }

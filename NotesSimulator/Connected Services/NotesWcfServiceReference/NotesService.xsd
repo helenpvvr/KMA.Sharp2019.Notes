@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:59735/NotesService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/KMA.Sharp2019.Notes.MoreThanNotes.DBModels" />
+  <xs:import schemaLocation="http://localhost:59735/NotesService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:element name="GetUserByLogin">
     <xs:complexType>
       <xs:sequence>
@@ -15,10 +16,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetUserByGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="guid" type="q2:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserByGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/KMA.Sharp2019.Notes.MoreThanNotes.DBModels" minOccurs="0" name="GetUserByGuidResult" nillable="true" type="q3:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddNewUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/KMA.Sharp2019.Notes.MoreThanNotes.DBModels" minOccurs="0" name="user" nillable="true" type="q2:User" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/KMA.Sharp2019.Notes.MoreThanNotes.DBModels" minOccurs="0" name="user" nillable="true" type="q4:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -32,7 +47,7 @@
   <xs:element name="AddNewNote">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/KMA.Sharp2019.Notes.MoreThanNotes.DBModels" minOccurs="0" name="note" nillable="true" type="q3:Note" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/KMA.Sharp2019.Notes.MoreThanNotes.DBModels" minOccurs="0" name="note" nillable="true" type="q5:Note" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -46,7 +61,7 @@
   <xs:element name="DeleteNotes">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/KMA.Sharp2019.Notes.MoreThanNotes.DBModels" minOccurs="0" name="note" nillable="true" type="q4:Note" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/KMA.Sharp2019.Notes.MoreThanNotes.DBModels" minOccurs="0" name="note" nillable="true" type="q6:Note" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,7 +75,7 @@
   <xs:element name="SaveNote">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/KMA.Sharp2019.Notes.MoreThanNotes.DBModels" minOccurs="0" name="note" nillable="true" type="q5:Note" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/KMA.Sharp2019.Notes.MoreThanNotes.DBModels" minOccurs="0" name="note" nillable="true" type="q7:Note" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

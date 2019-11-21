@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
 {
-    [Serializable]
+    
     [DataContract(IsReference = true)]
     public class Note:IDBModel
     {
@@ -75,13 +75,13 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
             _user.Notes.Add(this);
         }
 
-        private Note()
+        public Note()
         {
 
         }
         #endregion
 
-   
+    
         public void DeleteDatabaseValues()
         {
             _user = null;

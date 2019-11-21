@@ -21,6 +21,16 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator
             NavigationManager.Instance.Initialize(navigationModel);
             
             // TODO init
+            try
+            {
+                String guid = SerializationManager.Deserialize<String>(FileFolderHelper.StorageFilePath);
+                StationManager.CurrentUser = ConnectionManager.GetUserByGuid(guid);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                // ignored
+            }
 
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
             DataContext = mainWindowViewModel;

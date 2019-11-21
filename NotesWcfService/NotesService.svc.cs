@@ -30,6 +30,22 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
            
         }
 
+        public User GetUserByGuid(Guid guid)
+        {
+            User user;
+            try
+            {
+                IDBProvider dbProvider = ProviderFactory.CreateNewDBProvider();
+                user = dbProvider.UserByGuid(guid);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("There is an error: \n" + ex.Message);
+                return null;
+            }
+            return user;
+        }
+
 
         public bool AddNewUser(User user)
         {

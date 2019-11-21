@@ -75,7 +75,10 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             });
             LoaderManager.Instance.HideLoader();
             if (result)
+            {
+                SerializationManager.Serialize(StationManager.CurrentUser.Guid.ToString(), FileFolderHelper.StorageFilePath);
                 NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
+            }
         }
 
 
