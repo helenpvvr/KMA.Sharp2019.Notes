@@ -1,12 +1,10 @@
 ﻿using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 using System;
-using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 using KMA.Sharp2019.Notes.MoreThanNotes.DBModels;
-using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.NotesWcfServiceReference;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
@@ -59,13 +57,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             LoaderManager.Instance.ShowLoader();
             var result = await Task.Run(() =>
             {
-                User currentUser;
-                using (var myChannelFactory = new ChannelFactory<INotesService>("BasicHttpBinding_INotesService"))
-                {
-                    INotesService client = myChannelFactory.CreateChannel();
-                    currentUser = client.GetUserByLogin(_login); 
-                }
-
+                User currentUser = ConnectionManager.GetUserByLogin(_login);
                 if (currentUser == null)
                 {
                     MessageBox.Show(
