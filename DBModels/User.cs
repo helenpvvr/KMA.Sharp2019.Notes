@@ -15,6 +15,12 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
         [DataMember]
         private Guid _guid;
         [DataMember]
+        private string _firstName;
+        [DataMember]
+        private string _lastName;
+        [DataMember]
+        private DateTime _lastSingInDate;
+        [DataMember]
         private string _login;
         [DataMember]
         private string _email;
@@ -31,7 +37,25 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
             get { return _guid; }
             private set { _guid = value; }
         }
-       
+
+        public string FirstName
+        {
+            get { return _firstName; }
+            private set { _firstName = value; }
+        }
+
+        public string LastName
+        {
+            get { return _lastName; }
+            private set { _lastName = value; }
+        }
+
+        public DateTime LastSingInDate
+        {
+            get { return _lastSingInDate; }
+            set { _lastSingInDate = value; }
+        }
+
         public string Login
         {
             get { return _login; }
@@ -58,18 +82,20 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
 
         #region Constructor
 
-        public User(string login, string email, string password)
+        public User(string login, string firstName, string lastName, string email, string password) : this()
         {
             _guid = Guid.NewGuid();
+            _firstName = firstName;
+            _lastName = lastName;
             _login = login;
             _email = email;
             SetPassword(password);
-            _notes = new List<Note>();
+            _lastSingInDate = DateTime.Now;
         }
 
         public User()
         {
-
+            _notes = new List<Note>();
         }
         #endregion
 

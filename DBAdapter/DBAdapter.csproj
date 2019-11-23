@@ -61,6 +61,10 @@
     <Compile Include="Migrations\201910311415166_InitialMigration.Designer.cs">
       <DependentUpon>201910311415166_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911232029320_UpdateUser.cs" />
+    <Compile Include="Migrations\201911232029320_UpdateUser.Designer.cs">
+      <DependentUpon>201911232029320_UpdateUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MoreThanNotesDBContext.cs" />
     <Compile Include="ModelConfiguration\NoteEntityConfiguration.cs" />
@@ -84,6 +88,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910311415166_InitialMigration.resx">
       <DependentUpon>201910311415166_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911232029320_UpdateUser.resx">
+      <DependentUpon>201911232029320_UpdateUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
