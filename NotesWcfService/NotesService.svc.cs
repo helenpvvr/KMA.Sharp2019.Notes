@@ -7,11 +7,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
 {
    public class NotesService : INotesService
     {
-        public string DoWork()
-        {
-            return "I WORK";
-        }
-
         public User GetUserByLogin(string login)
         {
             User user;
@@ -22,7 +17,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
             }
             catch (Exception ex)
             {
-                Console.WriteLine("There is an error: \n"+ex.Message);
+                Console.WriteLine(@"There is an error:"+ex.Message);
                 return null;
             }
             return user;
@@ -40,7 +35,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
             }
             catch (Exception ex)
             {
-                Console.WriteLine("There is an error: \n" + ex.Message);
+                Console.WriteLine(@"There is an error:" + ex.Message);
                 return null;
             }
             return user;
@@ -56,7 +51,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
             }
             catch (Exception ex)
             {
-                Console.WriteLine("There is an error: \n" + ex.Message);
+                Console.WriteLine(@"There is an error:" + ex.Message);
                 return false;
             }
             return true;
@@ -71,7 +66,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
             }
             catch (Exception ex)
             {
-                Console.WriteLine("There is an error: \n" + ex.Message);
+                Console.WriteLine(@"There is an error:" + ex.Message);
                 return false;
             }
             return true;
@@ -86,7 +81,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
             }
             catch (Exception ex)
             {
-                Console.WriteLine("There is an error: \n" + ex.Message);
+                Console.WriteLine(@"There is an error:" + ex.Message);
                 return false;
             }
             return true;
@@ -101,9 +96,25 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
             }
             catch (Exception ex)
             {
-                Console.WriteLine("There is an error: \n" + ex.Message);
+                Console.WriteLine(@"There is an error:" + ex.Message);
                 return false;
             }
+            return true;
+        }
+
+        public bool SaveUser(User user)
+        {
+            try
+            {
+                IDBProvider dbProvider = ProviderFactory.CreateNewDBProvider();
+                dbProvider.SaveUser(user);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(@"There is an error:" + ex.Message);
+                return false;
+            }
+
             return true;
         }
     }

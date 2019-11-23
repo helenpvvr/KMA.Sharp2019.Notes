@@ -43,6 +43,12 @@
   <wsdl:message name="INotesService_SaveNote_OutputMessage">
     <wsdl:part name="parameters" element="tns:SaveNoteResponse" />
   </wsdl:message>
+  <wsdl:message name="INotesService_SaveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUser" />
+  </wsdl:message>
+  <wsdl:message name="INotesService_SaveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
+  </wsdl:message>
   <wsdl:portType name="INotesService">
     <wsdl:operation name="GetUserByLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/INotesService/GetUserByLogin" message="tns:INotesService_GetUserByLogin_InputMessage" />
@@ -67,6 +73,10 @@
     <wsdl:operation name="SaveNote">
       <wsdl:input wsaw:Action="http://tempuri.org/INotesService/SaveNote" message="tns:INotesService_SaveNote_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/INotesService/SaveNoteResponse" message="tns:INotesService_SaveNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotesService/SaveUser" message="tns:INotesService_SaveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotesService/SaveUserResponse" message="tns:INotesService_SaveUser_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_INotesService" type="tns:INotesService">
@@ -118,6 +128,15 @@
     </wsdl:operation>
     <wsdl:operation name="SaveNote">
       <soap:operation soapAction="http://tempuri.org/INotesService/SaveNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap:operation soapAction="http://tempuri.org/INotesService/SaveUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

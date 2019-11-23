@@ -25,7 +25,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesWcfService
         [OperationContract]
         bool SaveNote(Note note);
 
-
+        [OperationContract]
+        bool SaveUser(User user);
 
     }
 }
