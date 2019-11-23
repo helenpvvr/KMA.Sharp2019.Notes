@@ -11,12 +11,34 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
     internal class SignUpViewModel : BaseViewModel
     {
+        private string _firstName;
+        private string _lastName;
         private string _login;
         private string _password;
         private string _email;
 
         private RelayCommand<object> _signUpCommand;
         private RelayCommand<object> _signInCommand;
+
+        public string FirstName
+        {
+            get => _firstName;
+            set
+            {
+                _firstName = value.Replace(" ", "");
+                OnPropertyChanged();
+            }
+        }
+
+        public string LastName
+        {
+            get => _lastName;
+            set
+            {
+                _lastName = value.Replace(" ", "");
+                OnPropertyChanged();
+            }
+        }
 
         public string Login
         {

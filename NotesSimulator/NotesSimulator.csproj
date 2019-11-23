@@ -217,10 +217,6 @@
       <Project>{f7c8ad88-e697-4909-a64e-01f5e2024364}</Project>
       <Name>DBAdapter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DBModels\DBModels.csproj">
-      <Project>{ada1705d-f206-4131-b124-505a9adc6a21}</Project>
-      <Name>DBModels</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Tools\Tools.csproj">
       <Project>{a491b18f-8904-4f95-9a31-3970782354e8}</Project>
       <Name>Tools</Name>

@@ -4,7 +4,10 @@
   <xs:complexType name="User">
     <xs:sequence>
       <xs:element minOccurs="0" name="_email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_firstName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="_guid" type="ser:guid" />
+      <xs:element minOccurs="0" name="_lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_lastSingInDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="_login" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="_notes" nillable="true" type="tns:ArrayOfNote" />
       <xs:element minOccurs="0" name="_password" nillable="true" type="xs:string" />

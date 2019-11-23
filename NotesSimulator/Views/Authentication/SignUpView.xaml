@@ -7,16 +7,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              x:ClassModifier="internal">
-    <Grid Name="MainGrid">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="15*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -28,13 +32,18 @@
         <Viewbox Grid.Column="0" Grid.Row="0">
             <Button Content="←          "  Background="Black" BorderThickness="0" Foreground="White" Command="{Binding SignInCommand}"></Button>
         </Viewbox>
-        <Label Grid.Row="1" Grid.Column="1" VerticalAlignment ="Bottom" Content="Login"></Label>
-        <TextBox VerticalAlignment="Center" Padding="5" Grid.Row="2" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <Label Grid.Row="3" Grid.Column="1" VerticalAlignment ="Bottom" Content="Password"></Label>
-        <controls:PasswordControl Grid.Row="4" Grid.Column="1" Margin="0,0,0,15" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></controls:PasswordControl>
-        <Label Grid.Row="5" Grid.Column="1" VerticalAlignment ="Bottom" Content="Email"></Label>
-        <TextBox VerticalAlignment="Center" Padding="5" Grid.Row="6" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <Button Background="Black" Foreground="White" Grid.Row="7" Grid.Column="1" Width="75" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Sing up" Command="{Binding SignUpCommand}"></Button>
-        <StackPanel Grid.Row="8" Grid.ColumnSpan="3" Background="Black"></StackPanel>
+        <Label Grid.Row="1" Grid.Column="1" VerticalAlignment ="Bottom" Content="First Name"></Label>
+        <TextBox VerticalAlignment="Center" Padding="5" Grid.Row="2" Grid.Column="1" Margin="0,0,0,15" Text="{Binding FirsName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Label Grid.Row="3" Grid.Column="1" VerticalAlignment ="Bottom" Content="Last Name"></Label>
+        <TextBox VerticalAlignment="Center" Padding="5" Grid.Row="4" Grid.Column="1" Margin="0,0,0,15" Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        
+        <Label Grid.Row="5" Grid.Column="1" VerticalAlignment ="Bottom" Content="Login"></Label>
+        <TextBox VerticalAlignment="Center" Padding="5" Grid.Row="6" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Label Grid.Row="7" Grid.Column="1" VerticalAlignment ="Bottom" Content="Password"></Label>
+        <controls:PasswordControl Grid.Row="8" Grid.Column="1" Margin="0,0,0,15" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></controls:PasswordControl>
+        <Label Grid.Row="9" Grid.Column="1" VerticalAlignment ="Bottom" Content="Email"></Label>
+        <TextBox VerticalAlignment="Center" Padding="5" Grid.Row="10" Grid.Column="1" Margin="0,0,0,15" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Button Background="Black" Foreground="White" Grid.Row="11" Grid.Column="1" Width="75" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Sing up" Command="{Binding SignUpCommand}"></Button>
+        <StackPanel Grid.Row="12" Grid.ColumnSpan="3" Background="Black"></StackPanel>
     </Grid>
 </UserControl>

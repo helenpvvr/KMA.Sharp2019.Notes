@@ -51,6 +51,12 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter
             
         }
 
+        public void SaveUser(User user)
+        {
+            _context.Entry(user).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
         public  void SaveNote(Note note)
         {
                 _context.Entry(note).State = EntityState.Modified;

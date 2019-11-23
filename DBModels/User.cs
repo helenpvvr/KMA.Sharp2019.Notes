@@ -82,7 +82,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBModels
 
         #region Constructor
 
-        public User(string login, string firstName, string lastName, string email, string password) : this()
+        public User(string firstName, string lastName, string login, string email, string password) : this()
         {
             _guid = Guid.NewGuid();
             _firstName = firstName;
