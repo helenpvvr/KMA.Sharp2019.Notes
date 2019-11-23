@@ -47,7 +47,6 @@
     <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="KMA.Sharp2019.Notes.MoreThanNotes.DBModels, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -216,6 +215,10 @@
     <ProjectReference Include="..\DBAdapter\DBAdapter.csproj">
       <Project>{f7c8ad88-e697-4909-a64e-01f5e2024364}</Project>
       <Name>DBAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBModels\DBModels.csproj">
+      <Project>{ADA1705D-F206-4131-B124-505A9ADC6A21}</Project>
+      <Name>DBModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tools\Tools.csproj">
       <Project>{a491b18f-8904-4f95-9a31-3970782354e8}</Project>

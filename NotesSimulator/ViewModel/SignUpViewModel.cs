@@ -92,7 +92,9 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 
         private bool SignUpCanExecute(object obj)
         {
-            return !String.IsNullOrEmpty(_login) &&
+            return !String.IsNullOrEmpty(_firstName) &&
+                   !String.IsNullOrEmpty(_lastName) &&
+                   !String.IsNullOrEmpty(_login) &&
                    !String.IsNullOrEmpty(_password) &&
                    !String.IsNullOrEmpty(_email);
         }
@@ -123,7 +125,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
                 return;
 
             }
-            StationManager.CurrentUser = new User(Login, Email, Password);
+            StationManager.CurrentUser = new User(FirstName, LastName, Login, Email, Password);
             bool res  = ConnectionManager.AddUser(StationManager.CurrentUser);
             LoaderManager.Instance.HideLoader();
             if (res)
@@ -135,7 +137,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             {
                 MessageBox.Show($"User was not created");
             }
-
         }
         
     }
