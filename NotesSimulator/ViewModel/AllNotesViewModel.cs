@@ -8,25 +8,24 @@ using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
-    class AllNotesViewModel : BaseViewModel
+    internal class AllNotesViewModel : BaseViewModel
     {
         private ObservableCollection<Note> _notes;
         private RelayCommand<object> _signOutCommand;
         private RelayCommand<object> _addNoteCommand;
         private RelayCommand<object> _editNoteCommand;
         private RelayCommand<object> _deleteNoteCommand;
-        private RelayCommand<object> _helpCommand;
 
         private Note _selectedNote;
 
-        public AllNotesViewModel() {
+        internal AllNotesViewModel() {
             _notes = new ObservableCollection<Note>(StationManager.CurrentUser.Notes);
         }
 
         public ObservableCollection<Note> Notes
         {
             get =>_notes;
-            set { _notes = value; OnPropertyChanged(); }
+            private set { _notes = value; OnPropertyChanged(); }
         }
 
         public string UserLogin
@@ -51,11 +50,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         public ICommand EditNoteCommand
         {
             get { return _editNoteCommand ?? (_editNoteCommand = new RelayCommand<object>(EditNoteImplementation)); }
-        }
-
-        public ICommand HelpCommand
-        {
-            get { return _helpCommand ?? (_helpCommand = new RelayCommand<object>(HelpImplementation)); }
         }
 
         public Note SelectedNote
@@ -83,7 +77,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 
         private async void DeleteNoteImplementation(object obj)
         {
-            // TODO Ask if it is correct (I don't think that we should)
             LoaderManager.Instance.ShowLoader();
             await Task.Run(() =>
             {
@@ -107,12 +100,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         {
             StationManager.CurrentNote = SelectedNote;
             NavigationManager.Instance.Navigate(ModesEnum.NoteDetail);
-        }
-
-        private void HelpImplementation(object obj)
-        {
-            // TODO create view
-            MessageBox.Show("Help");
         }
     }
 }

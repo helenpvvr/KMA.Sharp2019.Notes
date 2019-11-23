@@ -9,7 +9,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter.MoreThanNotesDBContext context)
+        protected override void Seed(MoreThanNotesDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -8,7 +8,7 @@ using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Tools;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
-    class NoteViewModel : BaseViewModel
+    internal class NoteViewModel : BaseViewModel
     {
         private DateTime? _createdDateTime;
         private DateTime? _editedDateTime;
@@ -21,7 +21,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         public DateTime? CreatedDateTime
         {
             get => _createdDateTime;
-            set
+            private set
             {
                 _createdDateTime = value;
                 OnPropertyChanged();
@@ -31,7 +31,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         public DateTime? EditedDateTime
         {
             get => _editedDateTime;
-            set
+            private set
             {
                 _editedDateTime = value;
                 OnPropertyChanged();
@@ -63,7 +63,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             get => StationManager.CurrentUser.Login;
         }
 
-        public NoteViewModel()
+        internal NoteViewModel()
         {
             if (StationManager.CurrentNote == null)
             {

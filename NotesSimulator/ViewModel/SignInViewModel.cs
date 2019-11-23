@@ -8,7 +8,7 @@ using KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Managers;
 
 namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
 {
-    class SignInViewModel : BaseViewModel
+    internal class SignInViewModel : BaseViewModel
     {
         private string _login;
         private string _password;
@@ -45,6 +45,11 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
         public ICommand SignInCommand
         {
             get { return _signInCommand ?? (_signInCommand = new RelayCommand<object>(SignInImplementation, SignInCanExecute)); }
+        }
+
+        internal SignInViewModel()
+        {
+
         }
 
         private bool SignInCanExecute(object obj)

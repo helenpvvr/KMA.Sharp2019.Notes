@@ -6,9 +6,9 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.Views.Notes
     /// <summary>
     /// Interaction logic for AllNotesView.xaml
     /// </summary>
-    public partial class AllNotesView : UserControl
+    internal partial class AllNotesView : UserControl
     {
-        public AllNotesView()
+        internal AllNotesView()
         {
             InitializeComponent();
             DataContext = new AllNotesViewModel();

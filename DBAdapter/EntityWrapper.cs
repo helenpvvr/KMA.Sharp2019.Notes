@@ -29,8 +29,7 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.DBAdapter
             return _context.Users.Include(u => u.Notes).FirstOrDefault(u => u.Login == login);
         
         }
-
-        // TODO if it needs
+        
         public  User UserByGuid(Guid guid)
         {
                return _context.Users.Include(u => u.Notes).FirstOrDefault(u => u.Guid == guid);
