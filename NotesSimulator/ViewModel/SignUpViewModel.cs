@@ -130,7 +130,8 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator.ViewModel
             LoaderManager.Instance.HideLoader();
             if (res)
             {
-                MessageBox.Show($"User with name {_login} was created");
+                MessageBox.Show($"User with login {_login} was created");
+                SerializationManager.Serialize(StationManager.CurrentUser.Guid.ToString(), FileFolderHelper.StorageFilePath);
                 NavigationManager.Instance.Navigate(ModesEnum.AllNotes);
             }
             else

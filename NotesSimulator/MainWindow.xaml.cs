@@ -17,7 +17,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator
             var navigationModel = new NavigationModel(this);
             NavigationManager.Instance.Initialize(navigationModel);
             
-            // TODO init
             try
             {
                 String guid = SerializationManager.Deserialize<String>(FileFolderHelper.StorageFilePath);
@@ -31,7 +30,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                // ignored
             }
 
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
@@ -44,5 +42,6 @@ namespace KMA.Sharp2019.Notes.MoreThanNotes.NotesSimulator
         {
             get { return _contentControl; }
         }
+
     }
 }
